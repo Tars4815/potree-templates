@@ -80,6 +80,20 @@ The conversion operation produces a total of 3 files, with better support for st
 <p class="admonition-title">Note</p>
 <p>For making easier the conversion process, it is suggested to copy and paste in the unzipped PotreeConverter folder the pointcloud to be converted in a .las/.laz format.</p>
 </div>
+<p><em>For Windows users:</em></p>
+<p>For starting the conversion, you can write “cmd” in File Explorer Address Bar and press enter. The cmd shell will be opened having as referenced directory the PotreeConverter folder.
+In order to trigger the conversion, modify the following code according to your needs and then paste it in the cmd shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>\<span class="n">PotreeConverter</span><span class="o">.</span><span class="n">exe</span> <span class="n">pointcloud</span><span class="o">.</span><span class="n">las</span> <span class="o">-</span><span class="n">o</span> <span class="n">output</span> <span class="o">-</span><span class="n">p</span> <span class="n">index</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Where:</p>
+<ul class="simple">
+<li><p><em>PotreeConverter.exe</em> specify the executable file for the convertion;</p></li>
+<li><p><em>pointcloud.las</em> select the point cloud (las or laz) to be converter. This format is valid in case the point cloud file is located in the same folder of the converter exe. Otherwise it is necessary to specify the complete path of the file;</p></li>
+<li><p><em>output</em> is the name of the directory where to save the converted point cloud. In this case too, if the target folder is outside the converter one, it is necessary to specify the entire path.</p></li>
+<li><p><em>index</em> is the default name to be given to the output file.</p></li>
+</ul>
 </section>
 <section id="publications">
 <h3>Publications<a class="headerlink" href="#publications" title="Permalink to this heading">¶</a></h3>

@@ -59,6 +59,7 @@ Download and extract the PotreeConverter files for Windwos from this link: https
 .. image:: img/potree-converter-installing.PNG
   :align: center
   :alt: Potree Converter Release installer page
+  
 
 Be sure that the PotreeConverter.exe is present inside the unzipped folder.
 
@@ -66,6 +67,28 @@ Be sure that the PotreeConverter.exe is present inside the unzipped folder.
     add a note box
 
 .. note:: For making easier the conversion process, it is suggested to copy and paste in the unzipped PotreeConverter folder the pointcloud to be converted in a .las/.laz format.
+
+*For Windows users:*
+
+For starting the conversion, you can write "cmd" in File Explorer Address Bar and press enter. The cmd shell will be opened having as referenced directory the PotreeConverter folder.
+In order to trigger the conversion, modify the following code according to your needs and then paste it in the cmd shell:
+
+..
+    add a code block
+
+.. code-block::
+
+  .\PotreeConverter.exe pointcloud.las -o output -p index
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+Where:
+
+* *PotreeConverter.exe* specify the executable file for the convertion;
+* *pointcloud.las* select the point cloud (las or laz) to be converter. This format is valid in case the point cloud file is located in the same folder of the converter exe. Otherwise it is necessary to specify the complete path of the file;
+* *output* is the name of the directory where to save the converted point cloud. In this case too, if the target folder is outside the converter one, it is necessary to specify the entire path.
+* *index* is the default name to be given to the output file.
+
 
 Publications
 ++++++++++++
