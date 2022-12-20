@@ -60,9 +60,18 @@ Download and extract the PotreeConverter files for Windwos from this link: https
   :align: center
   :alt: Potree Converter Release installer page
 
+Be sure that the PotreeConverter.exe is present inside the unzipped folder.
 
+..
+    add a note box
 
-to be written
+.. note:: For making easier the conversion process, it is suggested to copy and paste in the unzipped PotreeConverter folder the pointcloud to be converted in a .las/.laz format.
+
+Publications
+++++++++++++
+
+* `Potree: Rendering Large Point Clouds in Web Browsers. <https://www.cg.tuwien.ac.at/research/publications/2016/SCHUETZ-2016-POT/SCHUETZ-2016-POT-thesis.pdf>`__
+* `Fast Out-of-Core Octree Generation for Massive Point Clouds <https://www.cg.tuwien.ac.at/research/publications/2020/SCHUETZ-2020-MPC/>`__, Schütz M., Ohrhallinger S., Wimmer M.
 
 Potree Develop
 --------------
