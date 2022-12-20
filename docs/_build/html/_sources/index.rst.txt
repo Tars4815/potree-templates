@@ -10,6 +10,7 @@ Welcome to potree-templates's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   pages/intro
    pages/getting-started
 
 

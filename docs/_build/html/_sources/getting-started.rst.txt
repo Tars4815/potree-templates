@@ -1,5 +1,0 @@
-===========================
-Getting started with potree-templates
-=============================
-
-This will cover how to create a simple teamplate for navigating point cloud on a Potree environment.
