@@ -11,6 +11,7 @@ Welcome to potree-templates's documentation!
    :caption: Contents:
 
    pages/intro
+   pages/potree
    pages/getting-started
 
 
