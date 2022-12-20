@@ -28,6 +28,10 @@ Download the Potree ,zip files for Windows from this link: https://github.com/po
   :align: center
   :alt: Potree Desktop Release installer page
 
+
+Graphic User Interface
+++++++++++++++++++++++
+
 Once you downloaded the installer .zip, extract all the files and execute PotreeDesktop.bat. Then, a new window will appear with the main Graphic User Interface of Potree.
 
 .. image:: img/potree-desktop-gui.PNG
@@ -43,6 +47,20 @@ The Potree GUI is made of 2 components:
 
 Potree Converter
 ----------------
+
+PotreeConverter generates an octree LOD structure for streaming and real-time rendering of massive point clouds. The results can be viewed in web browser with Potree.
+The conversion operation produces a total of 3 files, with better support for standard LAS attributes and arbitrary extra attributes.
+
+Getting started
++++++++++++++++
+
+Download and extract the PotreeConverter files for Windwos from this link: https://github.com/potree/PotreeConverter/releases
+
+.. image:: img/potree-converter-installing.PNG
+  :align: center
+  :alt: Potree Converter Release installer page
+
+
 
 to be written
 
