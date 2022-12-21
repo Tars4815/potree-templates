@@ -14,6 +14,8 @@ Welcome to potree-templates's documentation!
    pages/potree
    pages/test
    pages/getting-started
+   pages/standard-template
+   pages/ch-template
    pages/useful
 
 
