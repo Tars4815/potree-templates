@@ -43,7 +43,25 @@ The Potree GUI is made of 2 components:
 * **Sidebar**: on the left, it includes all the main features and tools for point-clouds elaborations in the Potree environment.
 * **Viewer**: on the right, it is the actual space for visually exploring and navigating the point-clouds.
 
-// UNDER CONSTRUCTION //
+Pointcloud conversion
++++++++++++++++++++++
+
+PotreeDesktop provides also a user-friendly interface for converting pointclouds in a Potree-compatible format. In order to do this, you can simply drag&drop the desired poincloud file (in a .las/.laz format) inside the viewer window.
+In a new window, after checking that the output target folder and the input files directory are defined as desired, it is required to select the PotreeConverter version to be adopted for the processing.
+Version 2.0 is the suggested one, generating only 3 files instead of thousands to millions. Click on the *Start Conversion* button to continue.
+
+.. image:: img/potree-desktop-conversion.PNG
+  :align: center
+  :alt: Potree Desktop Conversion selection
+  
+After the processing, the pointcloud is loaded in the viewer and the converted files are available in the previously defined output target directory.
+
+.. image:: img/potree-desktop-output.PNG
+  :align: center
+  :alt: Potree Desktop Converted pointcloud visualisation
+  
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 Potree Converter
 ----------------
@@ -80,8 +98,6 @@ In order to trigger the conversion, modify the following code according to your 
 
   .\PotreeConverter.exe pointcloud.las -o output -p index
 
-"""""""""""""""""""""""""""""""""""""""""""""""
-
 Where:
 
 * *PotreeConverter.exe* specify the executable file for the convertion;
@@ -89,12 +105,25 @@ Where:
 * *output* is the name of the directory where to save the converted point cloud. In this case too, if the target folder is outside the converter one, it is necessary to specify the entire path.
 * *index* is the default name to be given to the output file.
 
+After launching, the conversion is executed and details about each step of the the processing are reported on the cmd shell window.
+
+.. image:: img/potree-converter-conversion-details.PNG
+  :align: center
+  :alt: Potree Converter - Conversion details output
+  
+If successful, the conversion procedure gives as output a folder named as defined in the command (in this case *output*) containing 3 elements:
+
+1. a folder named **libs** that contains all the required libraries and scripts to make Potree operative (e.g. *three.js*, *openlayers*...);
+2. a folder named **pointclouds** containing an **index** directory that collects that 4 files resulting from the conversion of the original pointclouds. The *metadata.json* is the file called in the Potree environment when loading the pointcloud to the scene;
+3. an html file called **index.html** that includes a basic structure for a web page with a Potree viewer.
 
 Publications
 ++++++++++++
 
 * `Potree: Rendering Large Point Clouds in Web Browsers. <https://www.cg.tuwien.ac.at/research/publications/2016/SCHUETZ-2016-POT/SCHUETZ-2016-POT-thesis.pdf>`__
 * `Fast Out-of-Core Octree Generation for Massive Point Clouds <https://www.cg.tuwien.ac.at/research/publications/2020/SCHUETZ-2020-MPC/>`__, Schütz M., Ohrhallinger S., Wimmer M.
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 Potree Develop
 --------------
