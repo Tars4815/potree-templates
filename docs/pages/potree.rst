@@ -11,8 +11,8 @@ There are 3 ways for accessing Potree:
 * **Potree Converter**: Convert your point cloud to the Potree format (https://github.com/potree/PotreeConverter/releases)
 * **Potree Develop**: Edit and develop several potree examples (https://github.com/potree/potree/)
 
-Project Credits
-+++++++++++++++
+
+**Project Credits**
 
 * The multi-res-octree algorithms used by this viewer were developed at the Vienna University of Technology by Michael Wimmer and Claus Scheiblauer as part of the `Scanopy Project <http://www.cg.tuwien.ac.at/research/projects/Scanopy/>`__.
 * `Three.js <https://github.com/mrdoob/three.js>`__, the WebGL 3D rendering library on which potree is built.
