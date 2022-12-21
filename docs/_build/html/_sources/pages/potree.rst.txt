@@ -11,6 +11,16 @@ There are 3 ways for accessing Potree:
 * **Potree Converter**: Convert your point cloud to the Potree format (https://github.com/potree/PotreeConverter/releases)
 * **Potree Develop**: Edit and develop several potree examples (https://github.com/potree/potree/)
 
+Project Credits
++++++++++++++++
+
+* The multi-res-octree algorithms used by this viewer were developed at the Vienna University of Technology by Michael Wimmer and Claus Scheiblauer as part of the `Scanopy Project <http://www.cg.tuwien.ac.at/research/projects/Scanopy/>`__.
+* `Three.js <https://github.com/mrdoob/three.js>`__, the WebGL 3D rendering library on which potree is built.
+* `plas.io <http://plas.io/>`__ point cloud viewer. LAS and LAZ support have been taken from the laslaz.js implementation of plas.io. Thanks to `Uday Verma <https://twitter.com/udaykverma>`__ and `Howard Butler <https://twitter.com/howardbutler>`__ for this!
+* `Harvest4D <https://harvest4d.org/>`__ Potree currently runs as Master Thesis under the Harvest4D Project
+* Christian Boucheny (EDL developer) and Daniel Girardeau-Montaut (`CloudCompare <http://www.danielgm.net/cc/>`__). The EDL shader was adapted from the CloudCompare source code!
+* `Martin Isenburg <http://rapidlasso.com/>`__, `Georepublic <http://georepublic.de/en/>`__, `Veesus <http://veesus.com/>`__, `Sigeom Sa <http://www.sigeom.ch/>`__, `SITN <http://www.ne.ch/sitn>`__, `LBI ArchPro <http://archpro.lbg.ac.at/>`__,  `Pix4D <http://pix4d.com/>`__ as well as all the contributers to potree and PotreeConverter and many more for their support.
+
 Potree Desktop
 --------------
 
@@ -128,5 +138,5 @@ Publications
 Potree Develop
 --------------
 
-to be written
-
+For more details about the codes and libraries on which Potree is built, it is recommended to check the official Github repository: https://github.com/potree/potree.
+Many examples on how to implement Potree functionalities and customize them are available on the `example <https://github.com/potree/potree/tree/develop/examples>`__ folder with formatted html files dedicated to each case.

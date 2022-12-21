@@ -17,7 +17,7 @@
     <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting started with potree-templates" href="getting-started.html" />
+    <link rel="next" title="Test environment" href="test.html" />
     <link rel="prev" title="Introduzione" href="intro.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -44,19 +44,31 @@ There are 3 ways for accessing Potree:</p>
 <li><p><strong>Potree Converter</strong>: Convert your point cloud to the Potree format (<a class="reference external" href="https://github.com/potree/PotreeConverter/releases">https://github.com/potree/PotreeConverter/releases</a>)</p></li>
 <li><p><strong>Potree Develop</strong>: Edit and develop several potree examples (<a class="reference external" href="https://github.com/potree/potree/">https://github.com/potree/potree/</a>)</p></li>
 </ul>
+<section id="project-credits">
+<h2>Project Credits<a class="headerlink" href="#project-credits" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The multi-res-octree algorithms used by this viewer were developed at the Vienna University of Technology by Michael Wimmer and Claus Scheiblauer as part of the <a class="reference external" href="http://www.cg.tuwien.ac.at/research/projects/Scanopy/">Scanopy Project</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/mrdoob/three.js">Three.js</a>, the WebGL 3D rendering library on which potree is built.</p></li>
+<li><p><a class="reference external" href="http://plas.io/">plas.io</a> point cloud viewer. LAS and LAZ support have been taken from the laslaz.js implementation of plas.io. Thanks to <a class="reference external" href="https://twitter.com/udaykverma">Uday Verma</a> and <a class="reference external" href="https://twitter.com/howardbutler">Howard Butler</a> for this!</p></li>
+<li><p><a class="reference external" href="https://harvest4d.org/">Harvest4D</a> Potree currently runs as Master Thesis under the Harvest4D Project</p></li>
+<li><p>Christian Boucheny (EDL developer) and Daniel Girardeau-Montaut (<a class="reference external" href="http://www.danielgm.net/cc/">CloudCompare</a>). The EDL shader was adapted from the CloudCompare source code!</p></li>
+<li><p><a class="reference external" href="http://rapidlasso.com/">Martin Isenburg</a>, <a class="reference external" href="http://georepublic.de/en/">Georepublic</a>, <a class="reference external" href="http://veesus.com/">Veesus</a>, <a class="reference external" href="http://www.sigeom.ch/">Sigeom Sa</a>, <a class="reference external" href="http://www.ne.ch/sitn">SITN</a>, <a class="reference external" href="http://archpro.lbg.ac.at/">LBI ArchPro</a>,  <a class="reference external" href="http://pix4d.com/">Pix4D</a> as well as all the contributers to potree and PotreeConverter and many more for their support.</p></li>
+</ul>
 <section id="potree-desktop">
-<h2>Potree Desktop<a class="headerlink" href="#potree-desktop" title="Permalink to this heading">¶</a></h2>
+<h3>Potree Desktop<a class="headerlink" href="#potree-desktop" title="Permalink to this heading">¶</a></h3>
 <p>A desktop/portable version of the web-based point cloud viewer Potree, thanks to Electron.
 This versione allows you to load converted point clouds from your hard disk or external drive. It’s also portable, so you can put your models together with the viewer on a USB drive and open it wherever you go.
 It’s only been tested on Windows at the moment. It may not work on other systems or you may only be able to use it on the same Operating System that you’ve initially built it on.
 You can also drag&amp;drop cloud.js files into the window to add point clouds to the scene.</p>
+</section>
+</section>
 <section id="getting-started">
-<h3>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h3>
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h2>
 <p>Download the Potree ,zip files for Windows from this link: <a class="reference external" href="https://github.com/potree/PotreeDesktop/releases">https://github.com/potree/PotreeDesktop/releases</a></p>
 <img alt="Potree Desktop Release installer page" class="align-center" src="../_images/potree-desktop-installing.PNG" />
 </section>
 <section id="graphic-user-interface">
-<h3>Graphic User Interface<a class="headerlink" href="#graphic-user-interface" title="Permalink to this heading">¶</a></h3>
+<h2>Graphic User Interface<a class="headerlink" href="#graphic-user-interface" title="Permalink to this heading">¶</a></h2>
 <p>Once you downloaded the installer .zip, extract all the files and execute PotreeDesktop.bat. Then, a new window will appear with the main Graphic User Interface of Potree.</p>
 <img alt="Potree Desktop Release installer page" class="align-center" src="../_images/potree-desktop-gui.PNG" />
 <p>The Potree GUI is made of 2 components:</p>
@@ -66,22 +78,22 @@ You can also drag&amp;drop cloud.js files into the window to add point clouds to
 </ul>
 </section>
 <section id="pointcloud-conversion">
-<h3>Pointcloud conversion<a class="headerlink" href="#pointcloud-conversion" title="Permalink to this heading">¶</a></h3>
+<h2>Pointcloud conversion<a class="headerlink" href="#pointcloud-conversion" title="Permalink to this heading">¶</a></h2>
 <p>PotreeDesktop provides also a user-friendly interface for converting pointclouds in a Potree-compatible format. In order to do this, you can simply drag&amp;drop the desired poincloud file (in a .las/.laz format) inside the viewer window.
 In a new window, after checking that the output target folder and the input files directory are defined as desired, it is required to select the PotreeConverter version to be adopted for the processing.
 Version 2.0 is the suggested one, generating only 3 files instead of thousands to millions. Click on the <em>Start Conversion</em> button to continue.</p>
 <img alt="Potree Desktop Conversion selection" class="align-center" src="../_images/potree-desktop-conversion.PNG" />
 <p>After the processing, the pointcloud is loaded in the viewer and the converted files are available in the previously defined output target directory.</p>
 <img alt="Potree Desktop Converted pointcloud visualisation" class="align-center" src="../_images/potree-desktop-output.PNG" />
-</section>
-</section>
 <hr class="docutils" />
 <section id="potree-converter">
-<h2>Potree Converter<a class="headerlink" href="#potree-converter" title="Permalink to this heading">¶</a></h2>
+<h3>Potree Converter<a class="headerlink" href="#potree-converter" title="Permalink to this heading">¶</a></h3>
 <p>PotreeConverter generates an octree LOD structure for streaming and real-time rendering of massive point clouds. The results can be viewed in web browser with Potree.
 The conversion operation produces a total of 3 files, with better support for standard LAS attributes and arbitrary extra attributes.</p>
+</section>
+</section>
 <section id="id1">
-<h3>Getting started<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<h2>Getting started<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>Download and extract the PotreeConverter files for Windwos from this link: <a class="reference external" href="https://github.com/potree/PotreeConverter/releases">https://github.com/potree/PotreeConverter/releases</a></p>
 <img alt="Potree Converter Release installer page" class="align-center" src="../_images/potree-converter-installing.PNG" />
 <p>Be sure that the PotreeConverter.exe is present inside the unzipped folder.</p>
@@ -112,17 +124,17 @@ In order to trigger the conversion, modify the following code according to your 
 </ol>
 </section>
 <section id="publications">
-<h3>Publications<a class="headerlink" href="#publications" title="Permalink to this heading">¶</a></h3>
+<h2>Publications<a class="headerlink" href="#publications" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.cg.tuwien.ac.at/research/publications/2016/SCHUETZ-2016-POT/SCHUETZ-2016-POT-thesis.pdf">Potree: Rendering Large Point Clouds in Web Browsers.</a></p></li>
 <li><p><a class="reference external" href="https://www.cg.tuwien.ac.at/research/publications/2020/SCHUETZ-2020-MPC/">Fast Out-of-Core Octree Generation for Massive Point Clouds</a>, Schütz M., Ohrhallinger S., Wimmer M.</p></li>
 </ul>
-</section>
-</section>
 <hr class="docutils" />
 <section id="potree-develop">
-<h2>Potree Develop<a class="headerlink" href="#potree-develop" title="Permalink to this heading">¶</a></h2>
-<p>to be written</p>
+<h3>Potree Develop<a class="headerlink" href="#potree-develop" title="Permalink to this heading">¶</a></h3>
+<p>For more details about the codes and libraries on which Potree is built, it is recommended to check the official Github repository: <a class="reference external" href="https://github.com/potree/potree">https://github.com/potree/potree</a>.
+Many examples on how to implement Potree functionalities and customize them are available on the <a class="reference external" href="https://github.com/potree/potree/tree/develop/examples">example</a> folder with formatted html files dedicated to each case.</p>
+</section>
 </section>
 </section>
 
@@ -147,11 +159,15 @@ In order to trigger the conversion, modify the following code according to your 
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduzione</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Potree</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#potree-desktop">Potree Desktop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#potree-converter">Potree Converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#potree-develop">Potree Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-credits">Project Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graphic-user-interface">Graphic User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pointcloud-conversion">Pointcloud conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publications">Publications</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">Test environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started with potree-templates</a></li>
 </ul>
 
@@ -160,7 +176,7 @@ In order to trigger the conversion, modify the following code according to your 
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="intro.html" title="previous chapter">Introduzione</a></li>
-      <li>Next: <a href="getting-started.html" title="next chapter">Getting started with potree-templates</a></li>
+      <li>Next: <a href="test.html" title="next chapter">Test environment</a></li>
   </ul></li>
 </ul>
 </div>

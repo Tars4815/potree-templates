@@ -12,7 +12,9 @@ Welcome to potree-templates's documentation!
 
    pages/intro
    pages/potree
+   pages/test
    pages/getting-started
+   pages/useful
 
 
 
