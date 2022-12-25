@@ -70,15 +70,30 @@ Measurements are performed by use of left clicking the mouse on the desired poin
 
 **Angle**
 
-This tool measures the tridimensional angle formed by the lines connecting three points.To start a measurement, click on the angle measurement icon, then left click on three desired position and the process will be automatically completed.The unit of angle measurement is degree.
+..
+    add image
+
+.. image:: img/icons/angle.png
+
+This tool measures the tridimensional angle formed by the lines connecting three points. To start a measurement, click on the angle measurement icon, then left click on three desired position and the process will be automatically completed.The unit of angle measurement is degree.
 
 All red points are draggable to adjust their positions.
 
 **Point**
 
+..
+    add image
+
+.. image:: img/icons/point.png
+
 This tool set a point at desired position and display its XYZ coordinate. To start a measurement, click on the point measurement icon, then click on the desired position and the process will be completed. All red points are draggable to adjust their positions.
 
 **Distance**
+
+..
+    add image
+
+.. image:: img/icons/distance.png
 
 This tool measures the tridimensional distance of the lines connecting a series of points. To start a measurement, click on the distance measurement icon and start clicking on the desired position (two or more). Right click to complete the measurement process. The unit of distance measurement is meter.
 
@@ -86,11 +101,21 @@ Further information such as total length can also be obtained from selecting thi
 
 **Height**
 
+..
+    add image
+
+.. image:: img/icons/height.png
+
 This tool measures the vertical distance between two points. To start a measurement, click on the height measurement icon and then click on the desired two positions. The process will be automatically completed. More information can also be obtained from selecting this element under the scene section in the sidebar.
 
 All red points are draggable to adjust their positions.
 
 **Circle**
+
+..
+    add image
+
+.. image:: img/icons/circle.png
 
 This tool measures the radius of a circle formed by three points. To start a measurement, click on the circle measurement icon and then click on three desired positions.The process will be automatically completed. All red points are draggable to adjust their positions.
 
@@ -98,11 +123,21 @@ More information such as Circumference can also be obtained from selecting this 
 
 **Azimuth**
 
+..
+    add image
+
+.. image:: img/icons/azimuth.png
+
 This tool measures the azimuthal angle of a line. This line is formed by two points selected by the user, the angle is measured in degrees, clockwise from 0 to 360 and starting from the geographical north. To start a measurement, click on the azimuth icon and then click the first position for the center point, then click the second position to complete the measurement.
 
 More information can also be obtained from selecting this element under the scene section.
 
 **Area**
+
+..
+    add image
+
+.. image:: img/icons/area.png
 
 This tool measures the horizontal area formed by a polygon. To start a measurement, click on the area icon and start clicking on the positions forming the desired polygon (three or more).
 
@@ -111,6 +146,11 @@ Right click to finish measurement.
 Further information can also be obtained from selecting this element under the scene section.
 
 **Volume (cube)**
+
+..
+    add image
+
+.. image:: img/icons/volume.png
 
 This tool measures the horizontal area formed by a cube. To start a meaurement, click on the volume(cube) icon and click on the desired position in pointcloud to place the cube.
 
@@ -122,6 +162,11 @@ More information can also be obtained from selecting this element under the scen
 
 **Volume (sphere)**
 
+..
+    add image
+
+.. image:: img/icons/sphere_distances.png
+
 This tool measures the volume formed by a sphere. To start a measurement, click on the volume (sphere) icon and click on the desired position in point cloud to place the sphere. It is possible to relocate, rescale and rotate the sphere using the displayed handlers.
 
 Right click to finish measurement.
@@ -129,6 +174,11 @@ Right click to finish measurement.
 Further information can also be obtained from selecting this element under the scene section.
 
 **Height profile**
+
+..
+    add image
+
+.. image:: img/icons/profile.png
 
 The tool icon looks like a multicolored M.
 
@@ -148,6 +198,11 @@ This is useful for extracting the data you want to use for further analysis.
 
 **Annotation**
 
+..
+    add image
+
+.. image:: img/icons/annotation.png
+
 This tool creates an annotation label on a highlighted point on the pointcloud. To label a new annotation, click on the annotation icon and then click on the desired position.
 
 To edit the annotation, select this element under the scene section, then edit Title and Description.
@@ -155,6 +210,11 @@ To edit the annotation, select this element under the scene section, then edit T
 Clicking to the annotation can zoom to the annotation.
 
 **Remove all measurement**
+
+..
+    add image
+
+.. image:: img/icons/remove.png
 
 This tool removes all measurements on the pointcloud. To remove all measurement, click on the Remove all measurements icon or press Escape on the keyboard.
 
