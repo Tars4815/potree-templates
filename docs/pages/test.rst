@@ -11,7 +11,7 @@ You have to put all necessary source files and the pointcloud on a webserver to 
 You can, however, install a local webserver on your pc.
 `XAMPP <https://www.apachefriends.org/index.html>`__, which contains Apache Webserver as well as PHP and MySQL, is the suggested solution for testing locally potree pages.
 
-After you've installed and started Apache/XAMPP, you can access files in your htdocs directory through a localhost URL. Assuming your htdocs directory is C:\xampp\htdocs, you can access it in your browser with:
+After you've installed and started Apache/XAMPP, you can access files in your htdocs directory through a localhost URL. Assuming your htdocs directory is *C:\xampp\htdocs*, you can access it in your browser with:
 
 ..
     
