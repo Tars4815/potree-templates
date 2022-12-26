@@ -221,6 +221,11 @@ This tool removes all measurements on the pointcloud. To remove all measurement,
 Clipping
 ++++++++
 
+..
+    add image
+
+.. image:: img/icons/clip_volume.png
+
 Point cloud can be clipped by selecting an area. Clipping options include None / Highlight / Inside /outside.
 
 To clip a point cloud, click on the volume clip icon, place the cube on the model and relocate, rescale, and rotate to contain the desired area. Highlight is set by default as the clipping method.
@@ -236,11 +241,21 @@ The default navigation mode is Earth control. Potree viewer will always save the
 
 **Earth Control**
 
+..
+    add image
+
+.. image:: img/icons/earth_controls.png
+
 Earth control navigated as anchored to the pointcloud. Mouse left button pans the pointcloud, mouse wheel controls zoom, and right button orbits the pointcloud.
 
 Pressing “Ctrl”, key and holding the left mouse button changes the direction of the view.
 
 **Fly Control**
+
+..
+    add image
+
+.. image:: img/icons/fps_controls.png
 
 Fly control moves the view as in a bird eyes using the keyboard. Keys “W” and “S” moves forward and backwards, respectively and in the direction of the view, while “A” and “D” moves left and right respectively.
 
@@ -248,19 +263,39 @@ Also, the “R” and “F” keys moves the view up and down. The mouse left bu
 
 **Helicopter Control**
 
+..
+    add image
+
+.. image:: img/icons/helicopter_controls.png
+
 Helicopter control moves the view as in an aircraft using the keyboard. Keys “W” and “S” moves forward and backwards, respectively restricted in a horizontal plane, while “A” and “D” moves left and right respectively.
 
 Also, the “R” and “F” keys moves the view up and down. The mouse left button changes the direction of the camera, mouse wheel controls the speed for these movements, and right button moves the model in the XY axis.
 
 **Orbit Control**
 
+..
+    add image
+
+.. image:: img/icons/orbit_controls.png
+
 Orbit Control is similar to earthcontrol. The mouse left button orbits the model, the wheel controls zoom, and the right button moves the model in the XYZ axis.
 
 **Full extent**
 
+..
+    add image
+
+.. image:: img/icons/focus.png
+
 Full extent button restores all pointcloud view.
 
 **Navigation cube**
+
+..
+    add image
+
+.. image:: img/icons/navigation_cube.png
 
 Navigation cube displays a wireframe cube from different direction. Click the icon to view pointcloud from the specific direction.
 
