@@ -47,6 +47,107 @@ Examples
 Basic Viewer
 ++++++++++++
 
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `viewer.html file <https://github.com/potree/potree/blob/develop/examples/viewer.html>`__.
+This file template includes the basic settings for a functional Potree Viewer and represents the basis for all the other examples too.
+
+In the **head** section you can find all the stilesheets' references for each library needed in the basic viewer, defining the rendering of the Potree navigation area as well as the sidebar appearance.
+In this section, like every HTML page, it is possible to define the page title together with metadata information about the author and the content of the document.
+
+..
+    code block example for basic viewer
+
+.. code-block:: html
+
+  <head>
+	  <meta charset="utf-8">
+	  <meta name="description" content="">
+	  <meta name="author" content="">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	  <title>Potree Viewer</title>
+
+	  <link rel="stylesheet" type="text/css" href="../build/potree/potree.css">
+	  <link rel="stylesheet" type="text/css" href="../libs/jquery-ui/jquery-ui.min.css">
+	  <link rel="stylesheet" type="text/css" href="../libs/openlayers3/ol.css">
+	  <link rel="stylesheet" type="text/css" href="../libs/spectrum/spectrum.css">
+	  <link rel="stylesheet" type="text/css" href="../libs/jstree/themes/mixed/style.css">
+  </head>
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+Diving in the **body** section, first used JS libraries and dependencies are included.
+
+..
+    js libraries included in the bbody section
+
+.. code-block:: html
+
+  <script src="../libs/jquery/jquery-3.1.1.min.js"></script>
+	<script src="../libs/spectrum/spectrum.js"></script>
+	<script src="../libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../libs/other/BinaryHeap.js"></script>
+	<script src="../libs/tween/tween.min.js"></script>
+	<script src="../libs/d3/d3.js"></script>
+	<script src="../libs/proj4/proj4.js"></script>
+	<script src="../libs/openlayers3/ol.js"></script>
+	<script src="../libs/i18next/i18next.js"></script>
+	<script src="../libs/jstree/jstree.js"></script>
+	<script src="../build/potree/potree.js"></script>
+	<script src="../libs/plasio/js/laslaz.js"></script>
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+The Potree container class is then defined, settings also the renderer area and the sidebar elements too. By changing the *background.jpg* path in the renderer area, it is possible to change the background image that appears at the beginning of the rendering.
+
+..
+    Potree container class code
+
+.. code-block:: html
+
+  <div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
+		<div id="potree_render_area" style="background-image: url('../build/potree/resources/images/background.jpg');"></div>
+		<div id="potree_sidebar_container"> </div>
+	</div>
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+In the following lines, the script create a new viewer and define the scene settings. By calling different functions, it also defines appeareance options like:
+
+* **Eye-Dome Lightning**: it could enables or disabled with *.setEDLEnabled()*;
+* **Field of View**, defining the numerical value for the view angle with *.setFOV()*;
+* **Point Budget** sets the default point population for point cloud rendering *.setPointBudget()*;
+* **Size of Octree Cells** giving a numerical value as input to *.setMinNodeSize()*;
+* **Background** appearance, choosing as parameter for *.setBackground()* one of the following 4 defaults options: skybox, gradient, black and white;
+* **Description**, a text defined with *.setDescription()* that supports HTML and appears on the top of the renderer area;
+* **Setting parameters**, loading with *.loadSettingsFromURL()* a file with the desired settings for appearance.
+
+When applying *.loadGUI()*, it is possible to set the default style of the Potree sidebar by:
+
+* Setting the display **language**: simply put the language code inside *.setLanguage()*;
+* Choosing the **visibility of sidebar sections** at loading: this can be done by passing the section class name (e.g. #menu_tools) inside *$("#menu_tools").next().show()*. The other class name are: [UPDDATE];
+* The **visibility of the entire sidebar**, set as true when including *.toggleSidebar()*.
+
+..
+    Script defining the Potree Viewer and scene
+
+.. code-block:: html
+
+  window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+	viewer.setEDLEnabled(false);
+	viewer.setFOV(60);
+	viewer.setPointBudget(1_000_000);
+	viewer.loadSettingsFromURL();
+	viewer.setBackground("skybox");
+	viewer.setDescription("Point cloud courtesy of <a target='_blank' href='https://www.sigeom.ch/'>sigeom sa</a>");
+		
+	viewer.loadGUI(() => {
+		viewer.setLanguage('en');
+		$("#menu_tools").next().show();
+		$("#menu_clipping").next().show();
+		viewer.toggleSidebar();
+	});
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example2:
@@ -55,6 +156,15 @@ CA13 (18 billion points)
 ++++++++++++++++++++++++
 
 [TESTO]
+
+..
+    code block exampl
+
+.. code-block:: html
+
+  <b><a href="https://labmgf.dica.polimi.it/">link</a></b> - Example of code-block.
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 .. _example3:
 
