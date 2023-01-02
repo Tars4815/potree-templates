@@ -47,6 +47,16 @@ Examples
 Basic Viewer
 ++++++++++++
 
+`Working example <http://potree.org/potree/examples/viewer.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/viewer.png?raw=true
+  :align: center
+
+
+
 After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `viewer.html file <https://github.com/potree/potree/blob/develop/examples/viewer.html>`__.
 This file template includes the basic settings for a functional Potree Viewer and represents the basis for all the other examples too.
 
@@ -81,7 +91,7 @@ Diving in the **body** section, first used JS libraries and dependencies are inc
 
 .. code-block:: html
 
-  <script src="../libs/jquery/jquery-3.1.1.min.js"></script>
+	<script src="../libs/jquery/jquery-3.1.1.min.js"></script>
 	<script src="../libs/spectrum/spectrum.js"></script>
 	<script src="../libs/jquery-ui/jquery-ui.min.js"></script>
 	<script src="../libs/other/BinaryHeap.js"></script>
@@ -103,7 +113,7 @@ The Potree container class is then defined, settings also the renderer area and 
 
 .. code-block:: html
 
-  <div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
+	<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
 		<div id="potree_render_area" style="background-image: url('../build/potree/resources/images/background.jpg');"></div>
 		<div id="potree_sidebar_container"> </div>
 	</div>
@@ -131,24 +141,68 @@ When applying *.loadGUI()*, it is possible to set the default style of the Potre
 
 .. code-block:: html
 
-  window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
-	viewer.setEDLEnabled(false);
-	viewer.setFOV(60);
-	viewer.setPointBudget(1_000_000);
-	viewer.loadSettingsFromURL();
-	viewer.setBackground("skybox");
-	viewer.setDescription("Point cloud courtesy of <a target='_blank' href='https://www.sigeom.ch/'>sigeom sa</a>");
+	<script>
+		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+		iewer.setEDLEnabled(false);
+		viewer.setFOV(60);
+		viewer.setPointBudget(1_000_000);
+		viewer.loadSettingsFromURL();
+		viewer.setBackground("skybox");
+		viewer.setDescription("Point cloud courtesy of <a target='_blank' href='https://www.sigeom.ch/'>sigeom sa</a>");
 		
-	viewer.loadGUI(() => {
-		viewer.setLanguage('en');
-		$("#menu_tools").next().show();
-		$("#menu_clipping").next().show();
-		viewer.toggleSidebar();
-	});
+		viewer.loadGUI(() => {
+			viewer.setLanguage('en');
+			$("#menu_tools").next().show();
+			("#menu_clipping").next().show();
+			viewer.toggleSidebar();
+		});
+	</script>
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-[TESTO]
+After setting the viewer and scene parameter, it's time to include the point cloud. This can be done through the *.loadPointCloud()* function, including in the parenthesis:
+* the path to the file of the point cloud;
+* the name of the point cloud that will appear in the scene section of the sidebar (e.g. "sigeom.sa");
+
+Then, a series of parameters is set inside the loading function:
+* **material.size** defines the size of dots used for the cloud rendering;
+* **material.pointSizeType** indicates the point sizing view mode to be adopted in the render, choosing between the following options: *FIXED*, *ATTENUATED* or *ADAPTIVE*;
+* **material.shape** sets the shape used for point shape rendering. It could be *SQUARE*, *CIRCLE* or *PARABOLOID*;
+* **material.pointColorType** makes possible to select the attribute to be used for cloud coloring in the renderer area.
+
+All these parameters corresponds to the properties accessible after clicking on the point cloud from the objects list in the scene sidebar section.
+
+The *.addPointCloud()* is then applied to the scene to which the pointcloud should be added.
+Additionally, [Define ]
+
+..
+    Potree code for adding a point cloud to a scene
+
+.. code-block:: html
+
+	<script>
+  		// Load and add point cloud to scene
+		Potree.loadPointCloud("../pointclouds/vol_total/cloud.js", "sigeom.sa", e => {
+			let scene = viewer.scene;
+			let pointcloud = e.pointcloud;
+			
+			let material = pointcloud.material;
+			material.size = 1;
+			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+			material.shape = Potree.PointShape.SQUARE;
+			material.pointColorType = Potree.PointColorType.RGB;
+
+			scene.addPointCloud(pointcloud);
+			
+			viewer.fitToScreen();
+			// scene.view.setView(
+			// 	[589974.341, 231698.397, 986.146],
+			// 	[589851.587, 231428.213, 715.634],
+			// );
+		});
+	</script>
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 .. _example2:
 

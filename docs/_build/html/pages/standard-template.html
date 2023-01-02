@@ -78,6 +78,8 @@
 </ul>
 <section id="basic-viewer">
 <span id="example1"></span><h3>Basic Viewer<a class="headerlink" href="#basic-viewer" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference external" href="http://potree.org/potree/examples/viewer.html">Working example</a></p>
+<img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/viewer.png?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/viewer.png?raw=true" />
 <p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/viewer.html">viewer.html file</a>.
 This file template includes the basic settings for a functional Potree Viewer and represents the basis for all the other examples too.</p>
 <p>In the <strong>head</strong> section you can find all the stilesheets’ references for each library needed in the basic viewer, defining the rendering of the Potree navigation area as well as the sidebar appearance.
@@ -100,25 +102,25 @@ In this section, like every HTML page, it is possible to define the page title t
 <hr class="docutils" />
 <p>Diving in the <strong>body</strong> section, first used JS libraries and dependencies are included.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/jquery/jquery-3.1.1.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/spectrum/spectrum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/jquery-ui/jquery-ui.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/other/BinaryHeap.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/tween/tween.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/d3/d3.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/proj4/proj4.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/openlayers3/ol.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/i18next/i18next.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/jstree/jstree.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../build/potree/potree.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/plasio/js/laslaz.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/spectrum/spectrum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/jquery-ui/jquery-ui.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/other/BinaryHeap.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/tween/tween.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/d3/d3.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/proj4/proj4.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/openlayers3/ol.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/i18next/i18next.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/jstree/jstree.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../build/potree/potree.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../libs/plasio/js/laslaz.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
 <p>The Potree container class is then defined, settings also the renderer area and the sidebar elements too. By changing the <em>background.jpg</em> path in the renderer area, it is possible to change the background image that appears at the beginning of the rendering.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;potree_container&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; &quot;</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;potree_render_area&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-image: url(&#39;../build/potree/resources/images/background.jpg&#39;);&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;potree_sidebar_container&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;potree_render_area&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-image: url(&#39;../build/potree/resources/images/background.jpg&#39;);&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;potree_sidebar_container&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -138,24 +140,60 @@ In this section, like every HTML page, it is possible to define the page title t
 <li><p>Choosing the <strong>visibility of sidebar sections</strong> at loading: this can be done by passing the section class name (e.g. #menu_tools) inside <em>$(“#menu_tools”).next().show()</em>. The other class name are: [UPDDATE];</p></li>
 <li><p>The <strong>visibility of the entire sidebar</strong>, set as true when including <em>.toggleSidebar()</em>.</p></li>
 </ul>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>window.viewer = new Potree.Viewer(document.getElementById(&quot;potree_render_area&quot;));
-      viewer.setEDLEnabled(false);
-      viewer.setFOV(60);
-      viewer.setPointBudget(1_000_000);
-      viewer.loadSettingsFromURL();
-      viewer.setBackground(&quot;skybox&quot;);
-      viewer.setDescription(&quot;Point cloud courtesy of <span class="p">&lt;</span><span class="nt">a</span> <span class="na">target</span><span class="o">=</span><span class="s">&#39;_blank&#39;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;https://www.sigeom.ch/&#39;</span><span class="p">&gt;</span>sigeom sa<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>&quot;);
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">viewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">Viewer</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;potree_render_area&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="nx">iewer</span><span class="p">.</span><span class="nx">setEDLEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">setFOV</span><span class="p">(</span><span class="mf">60</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">setPointBudget</span><span class="p">(</span><span class="mf">1</span><span class="nx">_000_000</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">loadSettingsFromURL</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">setBackground</span><span class="p">(</span><span class="s2">&quot;skybox&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">setDescription</span><span class="p">(</span><span class="s2">&quot;Point cloud courtesy of &lt;a target=&#39;_blank&#39; href=&#39;https://www.sigeom.ch/&#39;&gt;sigeom sa&lt;/a&gt;&quot;</span><span class="p">);</span><span class="w"></span>
 
-      viewer.loadGUI(() =&gt; {
-              viewer.setLanguage(&#39;en&#39;);
-              $(&quot;#menu_tools&quot;).next().show();
-              $(&quot;#menu_clipping&quot;).next().show();
-              viewer.toggleSidebar();
-      });
+<span class="w">        </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">loadGUI</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">setLanguage</span><span class="p">(</span><span class="s1">&#39;en&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#menu_tools&quot;</span><span class="p">).</span><span class="nx">next</span><span class="p">().</span><span class="nx">show</span><span class="p">();</span><span class="w"></span>
+<span class="w">                </span><span class="p">(</span><span class="s2">&quot;#menu_clipping&quot;</span><span class="p">).</span><span class="nx">next</span><span class="p">().</span><span class="nx">show</span><span class="p">();</span><span class="w"></span>
+<span class="w">                </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">toggleSidebar</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>[TESTO]</p>
+<p>After setting the viewer and scene parameter, it’s time to include the point cloud. This can be done through the <em>.loadPointCloud()</em> function, including in the parenthesis:
+* the path to the file of the point cloud;
+* the name of the point cloud that will appear in the scene section of the sidebar (e.g. “sigeom.sa”);</p>
+<p>Then, a series of parameters is set inside the loading function:
+* <strong>material.size</strong> defines the size of dots used for the cloud rendering;
+* <strong>material.pointSizeType</strong> indicates the point sizing view mode to be adopted in the render, choosing between the following options: <em>FIXED</em>, <em>ATTENUATED</em> or <em>ADAPTIVE</em>;
+* <strong>material.shape</strong> sets the shape used for point shape rendering. It could be <em>SQUARE</em>, <em>CIRCLE</em> or <em>PARABOLOID</em>;
+* <strong>material.pointColorType</strong> makes possible to select the attribute to be used for cloud coloring in the renderer area.</p>
+<p>All these parameters corresponds to the properties accessible after clicking on the point cloud from the objects list in the scene sidebar section.</p>
+<p>The <em>.addPointCloud()</em> is then applied to the scene to which the pointcloud should be added.
+Additionally, [Define ]</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Load and add point cloud to scene</span><span class="w"></span>
+<span class="w">        </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">loadPointCloud</span><span class="p">(</span><span class="s2">&quot;../pointclouds/vol_total/cloud.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sigeom.sa&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nx">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">scene</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nx">pointcloud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">pointcloud</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nx">material</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pointcloud</span><span class="p">.</span><span class="nx">material</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="nx">material</span><span class="p">.</span><span class="nx">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="nx">material</span><span class="p">.</span><span class="nx">pointSizeType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">PointSizeType</span><span class="p">.</span><span class="nx">ADAPTIVE</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="nx">material</span><span class="p">.</span><span class="nx">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">PointShape</span><span class="p">.</span><span class="nx">SQUARE</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="nx">material</span><span class="p">.</span><span class="nx">pointColorType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">PointColorType</span><span class="p">.</span><span class="nx">RGB</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">                </span><span class="nx">scene</span><span class="p">.</span><span class="nx">addPointCloud</span><span class="p">(</span><span class="nx">pointcloud</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">                </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">fitToScreen</span><span class="p">();</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// scene.view.setView(</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//      [589974.341, 231698.397, 986.146],</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//      [589851.587, 231428.213, 715.634],</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// );</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
 </section>
 <section id="ca13-18-billion-points">
 <span id="example2"></span><h3>CA13 (18 billion points)<a class="headerlink" href="#ca13-18-billion-points" title="Permalink to this heading">¶</a></h3>
