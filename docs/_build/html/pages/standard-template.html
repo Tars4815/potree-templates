@@ -80,6 +80,7 @@
 <span id="example1"></span><h3>Basic Viewer<a class="headerlink" href="#basic-viewer" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="http://potree.org/potree/examples/viewer.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/viewer.png?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/viewer.png?raw=true" />
+<hr class="docutils" />
 <p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/viewer.html">viewer.html file</a>.
 This file template includes the basic settings for a functional Potree Viewer and represents the basis for all the other examples too.</p>
 <p>In the <strong>head</strong> section you can find all the stilesheets’ references for each library needed in the basic viewer, defining the rendering of the Potree navigation area as well as the sidebar appearance.
@@ -126,7 +127,7 @@ In this section, like every HTML page, it is possible to define the page title t
 <hr class="docutils" />
 <p>In the following lines, the script create a new viewer and define the scene settings. By calling different functions, it also defines appeareance options like:</p>
 <ul class="simple">
-<li><p><strong>Eye-Dome Lightning</strong>: it could enables or disabled with <em>.setEDLEnabled()</em>;</p></li>
+<li><p><strong>Eye-Dome Lightning</strong>: it could be enabled or disabled with <em>.setEDLEnabled()</em>;</p></li>
 <li><p><strong>Field of View</strong>, defining the numerical value for the view angle with <em>.setFOV()</em>;</p></li>
 <li><p><strong>Point Budget</strong> sets the default point population for point cloud rendering <em>.setPointBudget()</em>;</p></li>
 <li><p><strong>Size of Octree Cells</strong> giving a numerical value as input to <em>.setMinNodeSize()</em>;</p></li>
@@ -159,14 +160,18 @@ In this section, like every HTML page, it is possible to define the page title t
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>After setting the viewer and scene parameter, it’s time to include the point cloud. This can be done through the <em>.loadPointCloud()</em> function, including in the parenthesis:
-* the path to the file of the point cloud;
-* the name of the point cloud that will appear in the scene section of the sidebar (e.g. “sigeom.sa”);</p>
-<p>Then, a series of parameters is set inside the loading function:
-* <strong>material.size</strong> defines the size of dots used for the cloud rendering;
-* <strong>material.pointSizeType</strong> indicates the point sizing view mode to be adopted in the render, choosing between the following options: <em>FIXED</em>, <em>ATTENUATED</em> or <em>ADAPTIVE</em>;
-* <strong>material.shape</strong> sets the shape used for point shape rendering. It could be <em>SQUARE</em>, <em>CIRCLE</em> or <em>PARABOLOID</em>;
-* <strong>material.pointColorType</strong> makes possible to select the attribute to be used for cloud coloring in the renderer area.</p>
+<p>After setting the viewer and scene parameter, it’s time to include the point cloud. This can be done through the <em>.loadPointCloud()</em> function, including in the parenthesis:</p>
+<ul class="simple">
+<li><p>the path to the file of the point cloud;</p></li>
+<li><p>the name of the point cloud that will appear in the scene section of the sidebar (e.g. “sigeom.sa”);</p></li>
+</ul>
+<p>Then, a series of parameters is set inside the loading function:</p>
+<ul class="simple">
+<li><p><strong>material.size</strong> defines the size of dots used for the cloud rendering;</p></li>
+<li><p><strong>material.pointSizeType</strong> indicates the point sizing view mode to be adopted in the render, choosing between the following options: <em>FIXED</em>, <em>ATTENUATED</em> or <em>ADAPTIVE</em>;</p></li>
+<li><p><strong>material.shape</strong> sets the shape used for point shape rendering. It could be <em>SQUARE</em>, <em>CIRCLE</em> or <em>PARABOLOID</em>;</p></li>
+<li><p><strong>material.pointColorType</strong> makes possible to select the attribute to be used for cloud coloring in the renderer area.</p></li>
+</ul>
 <p>All these parameters corresponds to the properties accessible after clicking on the point cloud from the objects list in the scene sidebar section.</p>
 <p>The <em>.addPointCloud()</em> is then applied to the scene to which the pointcloud should be added.
 Additionally, [Define ]</p>

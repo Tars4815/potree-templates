@@ -55,7 +55,7 @@ Basic Viewer
 .. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/viewer.png?raw=true
   :align: center
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `viewer.html file <https://github.com/potree/potree/blob/develop/examples/viewer.html>`__.
 This file template includes the basic settings for a functional Potree Viewer and represents the basis for all the other examples too.
@@ -122,7 +122,7 @@ The Potree container class is then defined, settings also the renderer area and 
 
 In the following lines, the script create a new viewer and define the scene settings. By calling different functions, it also defines appeareance options like:
 
-* **Eye-Dome Lightning**: it could enables or disabled with *.setEDLEnabled()*;
+* **Eye-Dome Lightning**: it could be enabled or disabled with *.setEDLEnabled()*;
 * **Field of View**, defining the numerical value for the view angle with *.setFOV()*;
 * **Point Budget** sets the default point population for point cloud rendering *.setPointBudget()*;
 * **Size of Octree Cells** giving a numerical value as input to *.setMinNodeSize()*;
@@ -161,10 +161,12 @@ When applying *.loadGUI()*, it is possible to set the default style of the Potre
 """""""""""""""""""""""""""""""""""""""""""""""
 
 After setting the viewer and scene parameter, it's time to include the point cloud. This can be done through the *.loadPointCloud()* function, including in the parenthesis:
+
 * the path to the file of the point cloud;
 * the name of the point cloud that will appear in the scene section of the sidebar (e.g. "sigeom.sa");
 
 Then, a series of parameters is set inside the loading function:
+
 * **material.size** defines the size of dots used for the cloud rendering;
 * **material.pointSizeType** indicates the point sizing view mode to be adopted in the render, choosing between the following options: *FIXED*, *ATTENUATED* or *ADAPTIVE*;
 * **material.shape** sets the shape used for point shape rendering. It could be *SQUARE*, *CIRCLE* or *PARABOLOID*;
