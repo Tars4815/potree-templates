@@ -7,7 +7,7 @@ This page will cover details on how to build a web page with a Potree viewer usi
 Examples
 ---------
 
-* :ref:`example1`
+* :ref:`basic-viewer`
 * :ref:`example2`
 * :ref:`example3`
 * :ref:`example4`
@@ -40,9 +40,9 @@ Examples
 * :ref:`example31`
 * :ref:`example32`
 * :ref:`example33`
-* :ref:`example34`
+* :ref:`gradient-colors`
 
-.. _example1:
+.. _basic-viewer:
 
 Basic Viewer
 ++++++++++++
@@ -360,12 +360,32 @@ Meshes
 Multiple Point Clouds
 +++++++++++++++++++++
 
+`Working example <http://potree.org/potree/examples/multiple_pointclouds.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/multiple_point_clouds.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example23:
 
 Camera Animation
 ++++++++++++++++
+
+`Working example <http://potree.org/potree/examples/camera_animation.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/camera_animation.jpg?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -374,12 +394,32 @@ Camera Animation
 Features (CA13)
 +++++++++++++++
 
+`Working example <http://potree.org/potree/examples/features_ca13.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/features_ca13.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example25:
 
 Annotations
 ++++++++++++
+
+`Working example <http://potree.org/potree/examples/annotations.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/annotations.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -388,12 +428,32 @@ Annotations
 Hierarchical Annotations
 ++++++++++++++++++++++++
 
+`Working example <http://potree.org/potree/examples/annotation_hierarchy.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/annotation_hierarchy.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example27:
 
 Animation Paths
 ++++++++++++++++++++++++
+
+`Working example <http://potree.org/potree/examples/animation_paths.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/animation_paths.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -402,12 +462,32 @@ Animation Paths
 Shapefiles
 ++++++++++
 
+`Working example <http://potree.org/potree/examples/shapefiles.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/shapefiles.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example29:
 
 Cesium CA13
 ++++++++++++
+
+`Working example <http://potree.org/potree/examples/cesium_ca13.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/cesium_ca13.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -416,12 +496,32 @@ Cesium CA13
 Geopackage
 ++++++++++++
 
+`Working example <http://potree.org/potree/examples/geopackage.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/geopackage.jpg?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example31:
 
 Cesium Sorvilier
 ++++++++++++++++
+
+`Working example <http://potree.org/potree/examples/cesium_sorvilier.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/cesium_sorvilier.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -430,6 +530,17 @@ Cesium Sorvilier
 Custom Sidebar Section
 ++++++++++++++++++++++
 
+`Working example <http://potree.org/potree/examples/custom_sidebar_section.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/custom_sidebar_section.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+
 [TESTO]
 
 .. _example33:
@@ -437,12 +548,33 @@ Custom Sidebar Section
 Embedded iframe
 ++++++++++++++++++++++
 
+`Working example <http://potree.org/potree/examples/custom_sidebar_section.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/embedded_iframe.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
-.. _example34:
+.. _gradient-colors:
 
 Gradient colors
 +++++++++++++++
+
+`Working example <http://potree.org/potree/examples/gradient_colors.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/gradient_colors.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 
 [TESTO]
 
