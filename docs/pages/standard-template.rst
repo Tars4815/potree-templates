@@ -211,6 +211,16 @@ Additionally, [Define ]
 CA13 (18 billion points)
 ++++++++++++++++++++++++
 
+`Working example <http://potree.org/potree/examples/ca13.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/ca13.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 ..
@@ -227,12 +237,32 @@ CA13 (18 billion points)
 Retz (Potree + Cesium)
 +++++++++++++++++++++++
 
+`Working example <http://potree.org/potree/examples/cesium_retz.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/cesium_retz.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example4:
 
 Classifications
 +++++++++++++++++++
+
+`Working example <potree.org/potree/examples/classifications.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/classifications.jpg?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -241,12 +271,32 @@ Classifications
 Various Features
 +++++++++++++++++
 
+`Working example <http://potree.org/potree/examples/features_sorvilier.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/features_sorvilier.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example6:
 
 Toolbar
 +++++++
+
+`Working example <http://potree.org/potree/examples/toolbar.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/toolbar.jpg?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -255,12 +305,32 @@ Toolbar
 Load Project
 ++++++++++++
 
+`Working example <http://potree.org/potree/examples/load_project.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/load_project.jpg?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example8:
 
 Matcap
 ++++++
+
+`Working example <http://potree.org/potree/examples/matcap.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/matcap.jpg?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -269,12 +339,32 @@ Matcap
 Virtual Reality
 +++++++++++++++
 
+`Working example <https://potree.org/potree/examples/vr_heidentor.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/heidentor.jpg?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example10:
 
 Heidentor
 +++++++++
+
+`Working example <http://potree.org/potree/examples/heidentor.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/heidentor.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -283,12 +373,32 @@ Heidentor
 Lion
 +++++
 
+`Working example <http://potree.org/potree/examples/lion.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/lion.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example12:
 
 Lion LAS
 ++++++++
+
+`Working example <http://potree.org/potree/examples/lion_las.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/lion_las.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -297,12 +407,32 @@ Lion LAS
 Lion LAZ
 ++++++++
 
+`Working example <http://potree.org/potree/examples/lion_laz.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/lion_las.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example14:
 
 EPT
 ++++
+
+`Working example <http://potree.org/potree/examples/ept.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/lion.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -311,12 +441,32 @@ EPT
 EPT Binary
 ++++++++++
 
+`Working example <http://potree.org/potree/examples/ept_binary.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/lion_las.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example16:
 
 EPT zstandard
 +++++++++++++
+
+`Working example <http://potree.org/potree/examples/ept_zstandard.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/lion_las.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -325,12 +475,32 @@ EPT zstandard
 Clipping Volume
 +++++++++++++++
 
+`Working example <http://potree.org/potree/examples/clipping_volume.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/clipping_volume.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example18:
 
 Oriented Images
 ++++++++++++++++
+
+`Working example <http://potree.org/potree/examples/oriented_images.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/oriented_images.jpg?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
@@ -339,6 +509,16 @@ Oriented Images
 Elevation Profile
 +++++++++++++++++
 
+`Working example <http://potree.org/potree/examples/elevation_profile.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/elevation_profile.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example20:
@@ -346,12 +526,32 @@ Elevation Profile
 Measurements
 +++++++++++++++++
 
+`Working example <http://potree.org/potree/examples/measurements.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/measurements.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
 [TESTO]
 
 .. _example21:
 
 Meshes
 ++++++
+
+`Working example <http://potree.org/potree/examples/meshes.html>`__
+
+..
+    add centerd image
+
+.. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/meshes.png?raw=true
+  :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
