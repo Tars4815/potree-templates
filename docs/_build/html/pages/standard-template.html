@@ -42,7 +42,7 @@
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#basic-viewer"><span class="std std-ref">Basic Viewer</span></a></p></li>
-<li><p><a class="reference internal" href="#example2"><span class="std std-ref">CA13 (18 billion points)</span></a></p></li>
+<li><p><a class="reference internal" href="#ca13"><span class="std std-ref">CA13 (18 billion points)</span></a></p></li>
 <li><p><a class="reference internal" href="#example3"><span class="std std-ref">Retz (Potree + Cesium)</span></a></p></li>
 <li><p><a class="reference internal" href="#example4"><span class="std std-ref">Classifications</span></a></p></li>
 <li><p><a class="reference internal" href="#example5"><span class="std std-ref">Various Features</span></a></p></li>
@@ -72,8 +72,8 @@
 <li><p><a class="reference internal" href="#example29"><span class="std std-ref">Cesium CA13</span></a></p></li>
 <li><p><a class="reference internal" href="#example30"><span class="std std-ref">Geopackage</span></a></p></li>
 <li><p><a class="reference internal" href="#example31"><span class="std std-ref">Cesium Sorvilier</span></a></p></li>
-<li><p><a class="reference internal" href="#example32"><span class="std std-ref">Custom Sidebar Section</span></a></p></li>
-<li><p><a class="reference internal" href="#example33"><span class="std std-ref">Embedded iframe</span></a></p></li>
+<li><p><a class="reference internal" href="#custom-sidebar"><span class="std std-ref">Custom Sidebar Section</span></a></p></li>
+<li><p><a class="reference internal" href="#iframe"><span class="std std-ref">Embedded iframe</span></a></p></li>
 <li><p><a class="reference internal" href="#gradient-colors"><span class="std std-ref">Gradient colors</span></a></p></li>
 </ul>
 <section id="basic-viewer">
@@ -201,10 +201,12 @@ Additionally, [Define ]</p>
 <hr class="docutils" />
 </section>
 <section id="ca13-18-billion-points">
-<span id="example2"></span><h3>CA13 (18 billion points)<a class="headerlink" href="#ca13-18-billion-points" title="Permalink to this heading">¶</a></h3>
+<span id="ca13"></span><h3>CA13 (18 billion points)<a class="headerlink" href="#ca13-18-billion-points" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="http://potree.org/potree/examples/ca13.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/ca13.png?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/ca13.png?raw=true" />
 <hr class="docutils" />
+<p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/ca13.html">ca13.html file</a>.
+This file template includes the basic settings for a functional Potree Viewer that includes a point cloud with more than 18 billion points.</p>
 <p>[TESTO]</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://labmgf.dica.polimi.it/&quot;</span><span class="p">&gt;</span>link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> - Example of code-block.
 </pre></div>
@@ -415,18 +417,67 @@ Additionally, [Define ]</p>
 <p>[TESTO]</p>
 </section>
 <section id="custom-sidebar-section">
-<span id="example32"></span><h3>Custom Sidebar Section<a class="headerlink" href="#custom-sidebar-section" title="Permalink to this heading">¶</a></h3>
+<span id="custom-sidebar"></span><h3>Custom Sidebar Section<a class="headerlink" href="#custom-sidebar-section" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="http://potree.org/potree/examples/custom_sidebar_section.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/custom_sidebar_section.png?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/custom_sidebar_section.png?raw=true" />
+<hr class="docutils" />
+<p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/custom_sidebar_section.html">custom_sidebar_section.html file</a>.
+This file template includes the basic settings for a functional Potree Viewer (<a class="reference internal" href="#basic-viewer"><span class="std std-ref">Basic Viewer</span></a>) equipped with examples of custom sidebar.</p>
+<p>In the <strong>body</strong> section inside the script block, after defining the basic settings for initialising the viewer, the sidebar section are called inside the <strong>.loadGUI()</strong> function:
+First the new section name is declared with a variable (let section). To define its name and keeping the style coherent with the rest of the sidebar sections, simply substitute <em>Metadata</em> with the desired title. Advanced style settings can be performed as well accoring to CSS sintax.
+Then the title is attached to the content variable (let content).
+Finally the the section is populated with an HTML-compatible content (content.html()). This can include texts as well as other media.
+The new section is then inserted in the standard sidebar by first setting the toggling functionaly on click (<em>.slideToggle()</em>) and then indicating its order position in relation to the other sections (<em>.insertBefore()</em>).
+The visibility at first page loading is set by including the code the section variable name followed by <em>.hide()</em>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">loadGUI</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                      </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">toggleSidebar</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">                      </span><span class="kd">let</span><span class="w"> </span><span class="nx">section</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="sb">`</span>
+<span class="sb">                              &lt;h3 id=&quot;menu_meta&quot; class=&quot;accordion-header ui-widget&quot;&gt;&lt;span&gt;Metadata&lt;/span&gt;&lt;/h3&gt;</span>
+<span class="sb">                              &lt;div class=&quot;accordion-content ui-widget pv-menu-list&quot;&gt;&lt;/div&gt;</span>
+<span class="sb">                      `</span><span class="p">);</span><span class="w"></span>
+<span class="w">                      </span><span class="kd">let</span><span class="w"> </span><span class="nx">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">section</span><span class="p">.</span><span class="nx">last</span><span class="p">();</span><span class="w"></span>
+<span class="w">                      </span><span class="nx">content</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="sb">`</span>
+<span class="sb">                      &lt;div class=&quot;pv-menu-list&quot;&gt;</span>
+<span class="sb">                              A custom Section in the sidebar!&lt;br&gt;</span>
+<span class="sb">                              &lt;br&gt;</span>
+<span class="sb">                              Uncomment &quot;content.hide();&quot; to hide content by default.&lt;br&gt;</span>
+<span class="sb">                              &lt;br&gt;</span>
+<span class="sb">                              Take a look at src/viewer/sidebar.html and sidebar.js to</span>
+<span class="sb">                              learn how the other sections were populated.</span>
+<span class="sb">                      &lt;/div&gt;</span>
+<span class="sb">                      `</span><span class="p">);</span><span class="w"></span>
+<span class="w">                      </span><span class="nx">section</span><span class="p">.</span><span class="nx">first</span><span class="p">().</span><span class="nx">click</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">content</span><span class="p">.</span><span class="nx">slideToggle</span><span class="p">());</span><span class="w"></span>
+<span class="w">                      </span><span class="nx">section</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#menu_about&#39;</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">              </span><span class="p">});</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p>[TESTO]</p>
 </section>
 <section id="embedded-iframe">
-<span id="example33"></span><h3>Embedded iframe<a class="headerlink" href="#embedded-iframe" title="Permalink to this heading">¶</a></h3>
-<p><a class="reference external" href="http://potree.org/potree/examples/custom_sidebar_section.html">Working example</a></p>
+<span id="iframe"></span><h3>Embedded iframe<a class="headerlink" href="#embedded-iframe" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference external" href="http://potree.org/potree/examples/embedded_iframe.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/embedded_iframe.png?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/embedded_iframe.png?raw=true" />
 <hr class="docutils" />
-<p>[TESTO]</p>
+<p>This example simply illustrates how to set up a webpage with a Potree Viewer embedded in iframe HTML element. The example code is available in the <em>examples</em> folder in the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/embedded_iframe.html">embedded_iframe.html file</a></p>
+<p>The iframe implementation is possible once a proper viewer is set up in a dedicated html file. In the case of the code example, the iframe is included in the <strong>body</strong> section in a <strong>div</strong> element and refers to the Potree viewer set in the <a class="reference internal" href="#basic-viewer"><span class="std std-ref">Basic Viewer</span></a> example.
+In order to change the viewer page to be embedded, subtitute <em>viewer.html</em> in the code below with the name of the html page in which you defined a Potree viewer.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position: absolute; left: 20%; right: 20%; top: 20%; bottom: 20%&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;viewer.html&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 100%; height: 100%&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>In the div element additional settings are defined, including the style and the position of the element within the page following CSS standards.</p>
 </section>
 <section id="gradient-colors">
 <span id="id2"></span><h3>Gradient colors<a class="headerlink" href="#gradient-colors" title="Permalink to this heading">¶</a></h3>

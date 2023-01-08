@@ -8,7 +8,7 @@ Examples
 ---------
 
 * :ref:`basic-viewer`
-* :ref:`example2`
+* :ref:`ca13`
 * :ref:`example3`
 * :ref:`example4`
 * :ref:`example5`
@@ -38,8 +38,8 @@ Examples
 * :ref:`example29`
 * :ref:`example30`
 * :ref:`example31`
-* :ref:`example32`
-* :ref:`example33`
+* :ref:`custom-sidebar`
+* :ref:`iframe`
 * :ref:`gradient-colors`
 
 .. _basic-viewer:
@@ -206,7 +206,7 @@ Additionally, [Define ]
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-.. _example2:
+.. _ca13:
 
 CA13 (18 billion points)
 ++++++++++++++++++++++++
@@ -220,6 +220,9 @@ CA13 (18 billion points)
   :align: center
 
 """""""""""""""""""""""""""""""""""""""""""""""
+
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `ca13.html file <https://github.com/potree/potree/blob/develop/examples/ca13.html>`__.
+This file template includes the basic settings for a functional Potree Viewer that includes a point cloud with more than 18 billion points.
 
 [TESTO]
 
@@ -725,7 +728,7 @@ Cesium Sorvilier
 
 [TESTO]
 
-.. _example32:
+.. _custom-sidebar:
 
 Custom Sidebar Section
 ++++++++++++++++++++++
@@ -733,32 +736,94 @@ Custom Sidebar Section
 `Working example <http://potree.org/potree/examples/custom_sidebar_section.html>`__
 
 ..
-    add centerd image
+    Custom sidebar example screenshot
 
 .. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/custom_sidebar_section.png?raw=true
   :align: center
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `custom_sidebar_section.html file <https://github.com/potree/potree/blob/develop/examples/custom_sidebar_section.html>`__.
+This file template includes the basic settings for a functional Potree Viewer (:ref:`basic-viewer`) equipped with examples of custom sidebar.
+
+In the **body** section inside the script block, after defining the basic settings for initialising the viewer, the sidebar section are called inside the **.loadGUI()** function: 
+First the new section name is declared with a variable (let section). To define its name and keeping the style coherent with the rest of the sidebar sections, simply substitute *Metadata* with the desired title. Advanced style settings can be performed as well accoring to CSS sintax.
+Then the title is attached to the content variable (let content).
+Finally the the section is populated with an HTML-compatible content (content.html()). This can include texts as well as other media.
+The new section is then inserted in the standard sidebar by first setting the toggling functionaly on click (*.slideToggle()*) and then indicating its order position in relation to the other sections (*.insertBefore()*).
+The visibility at first page loading is set by including the code the section variable name followed by *.hide()*.
+
+..
+    Potree custom sidebar example code
+
+.. code-block:: html
+
+  <script type="module">
+    viewer.loadGUI(() => {
+			viewer.toggleSidebar();
+			
+			let section = $(`
+				<h3 id="menu_meta" class="accordion-header ui-widget"><span>Metadata</span></h3>
+				<div class="accordion-content ui-widget pv-menu-list"></div>
+			`);
+			let content = section.last();
+			content.html(`
+			<div class="pv-menu-list">
+				A custom Section in the sidebar!<br>
+				<br>	
+				Uncomment "content.hide();" to hide content by default.<br>
+				<br>
+				Take a look at src/viewer/sidebar.html and sidebar.js to 
+				learn how the other sections were populated.
+			</div>
+			`);
+			section.first().click(() => content.slideToggle());
+			section.insertBefore($('#menu_about'));
+			
+		});
+  </script>
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 [TESTO]
 
-.. _example33:
+.. _iframe:
 
 Embedded iframe
 ++++++++++++++++++++++
 
-`Working example <http://potree.org/potree/examples/custom_sidebar_section.html>`__
+`Working example <http://potree.org/potree/examples/embedded_iframe.html>`__
 
 ..
-    add centerd image
+    Embedded iframe screenshot
 
 .. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/embedded_iframe.png?raw=true
   :align: center
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-[TESTO]
+This example simply illustrates how to set up a webpage with a Potree Viewer embedded in iframe HTML element. The example code is available in the *examples* folder in the `embedded_iframe.html file <https://github.com/potree/potree/blob/develop/examples/embedded_iframe.html>`__
+
+The iframe implementation is possible once a proper viewer is set up in a dedicated html file. In the case of the code example, the iframe is included in the **body** section in a **div** element and refers to the Potree viewer set in the :ref:`basic-viewer` example.
+In order to change the viewer page to be embedded, subtitute *viewer.html* in the code below with the name of the html page in which you defined a Potree viewer.
+
+..
+    Potree iframe example
+
+.. code-block:: html
+
+  <html>
+    <head></head>
+    <body>
+      <div style="position: absolute; left: 20%; right: 20%; top: 20%; bottom: 20%">
+        <iframe src="viewer.html" style="width: 100%; height: 100%"></iframe>
+      </div>
+    </body>
+  </html>
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+In the div element additional settings are defined, including the style and the position of the element within the page following CSS standards. 
 
 .. _gradient-colors:
 
