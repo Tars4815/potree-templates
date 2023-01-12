@@ -9,34 +9,34 @@ Examples
 
 * :ref:`basic-viewer`
 * :ref:`ca13`
-* :ref:`example3`
-* :ref:`example4`
-* :ref:`example5`
-* :ref:`example6`
-* :ref:`example7`
-* :ref:`example8`
-* :ref:`example9`
-* :ref:`example10`
-* :ref:`example11`
-* :ref:`example12`
-* :ref:`example13`
-* :ref:`example14`
-* :ref:`example15`
-* :ref:`example16`
-* :ref:`example17`
+* :ref:`retz`
+* :ref:`classifications`
+* :ref:`various-features`
+* :ref:`toolbar`
+* :ref:`load-project`
+* :ref:`matcap`
+* :ref:`virtual-reality`
+* :ref:`heidentor`
+* :ref:`lion`
+* :ref:`lion-las`
+* :ref:`lion-laz`
+* :ref:`ept`
+* :ref:`ept-binary`
+* :ref:`ept-zstandard`
+* :ref:`clipping-volume`
 * :ref:`oriented-images`
-* :ref:`example19`
-* :ref:`example20`
-* :ref:`example21`
-* :ref:`example22`
-* :ref:`example23`
-* :ref:`example24`
-* :ref:`example25`
-* :ref:`example26`
-* :ref:`example27`
-* :ref:`example28`
-* :ref:`example29`
-* :ref:`example30`
+* :ref:`elevation-profile`
+* :ref:`measurements`
+* :ref:`meshes`
+* :ref:`multiple-point-clouds`
+* :ref:`camera-animation`
+* :ref:`features-ca13`
+* :ref:`annotations`
+* :ref:`hierarchical-annotations`
+* :ref:`animation-paths`
+* :ref:`shapefiles`
+* :ref:`cesium-ca13`
+* :ref:`geopackage`
 * :ref:`cesium-sorvilier`
 * :ref:`custom-sidebar`
 * :ref:`iframe`
@@ -235,7 +235,7 @@ This file template includes the basic settings for a functional Potree Viewer th
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-.. _example3:
+.. _retz:
 
 Retz (Potree + Cesium)
 +++++++++++++++++++++++
@@ -252,7 +252,7 @@ Retz (Potree + Cesium)
 
 [TESTO]
 
-.. _example4:
+.. _classifications:
 
 Classifications
 +++++++++++++++++++
@@ -269,7 +269,7 @@ Classifications
 
 [TESTO]
 
-.. _example5:
+.. _various-features:
 
 Various Features
 +++++++++++++++++
@@ -286,7 +286,7 @@ Various Features
 
 [TESTO]
 
-.. _example6:
+.. _toolbar:
 
 Toolbar
 +++++++
@@ -303,7 +303,7 @@ Toolbar
 
 [TESTO]
 
-.. _example7:
+.. _load-project:
 
 Load Project
 ++++++++++++
@@ -320,7 +320,7 @@ Load Project
 
 [TESTO]
 
-.. _example8:
+.. _matcap:
 
 Matcap
 ++++++
@@ -337,7 +337,7 @@ Matcap
 
 [TESTO]
 
-.. _example9:
+.. _virtual-reality:
 
 Virtual Reality
 +++++++++++++++
@@ -354,7 +354,7 @@ Virtual Reality
 
 [TESTO]
 
-.. _example10:
+.. _heidentor:
 
 Heidentor
 +++++++++
@@ -371,7 +371,7 @@ Heidentor
 
 [TESTO]
 
-.. _example11:
+.. _lion:
 
 Lion
 +++++
@@ -386,9 +386,12 @@ Lion
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-[TESTO]
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `lion.html file <https://github.com/potree/potree/blob/develop/examples/lion.html>`__.
+This file template includes the basic settings for a functional Potree Viewer (:ref:`basic-viewer`) equipped with examples of custom sidebar.
 
-.. _example12:
+This example show the rendering of the lion point cloud.
+
+.. _lion-las:
 
 Lion LAS
 ++++++++
@@ -403,9 +406,12 @@ Lion LAS
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-[TESTO]
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `lion_las.html file <https://github.com/potree/potree/blob/develop/examples/lion_las.html>`__.
+This file template includes the basic settings for a functional Potree Viewer (:ref:`basic-viewer`) equipped with examples of custom sidebar.
 
-.. _example13:
+This example show the rendering of the lion LAS point cloud in a basic viewer.
+
+.. _lion-laz:
 
 Lion LAZ
 ++++++++
@@ -420,9 +426,12 @@ Lion LAZ
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-[TESTO]
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `lion_laz.html file <https://github.com/potree/potree/blob/develop/examples/lion_laz.html>`__.
+This file template includes the basic settings for a functional Potree Viewer (:ref:`basic-viewer`) equipped with examples of custom sidebar.
 
-.. _example14:
+This example show the rendering of the lion LAZ compressed point cloud in a basic viewer.
+
+.. _ept:
 
 EPT
 ++++
@@ -439,7 +448,7 @@ EPT
 
 [TESTO]
 
-.. _example15:
+.. _ept-binary:
 
 EPT Binary
 ++++++++++
@@ -456,7 +465,7 @@ EPT Binary
 
 [TESTO]
 
-.. _example16:
+.. _ept-zstandard:
 
 EPT zstandard
 +++++++++++++
@@ -473,7 +482,7 @@ EPT zstandard
 
 [TESTO]
 
-.. _example17:
+.. _clipping-volume:
 
 Clipping Volume
 +++++++++++++++
@@ -558,7 +567,7 @@ In order to run smoothly the entire process, it is important that the parameters
 
 [ADD DETAILS ON HOW TO EASILY CREATE THESE FILES WITH COMMERCIAL SOFTWARE (METASHAPE)]
 
-.. _example19:
+.. _elevation-profile:
 
 Elevation Profile
 +++++++++++++++++
@@ -575,7 +584,7 @@ Elevation Profile
 
 [TESTO]
 
-.. _example20:
+.. _measurements:
 
 Measurements
 +++++++++++++++++
@@ -592,7 +601,7 @@ Measurements
 
 [TESTO]
 
-.. _example21:
+.. _meshes:
 
 Meshes
 ++++++
@@ -609,7 +618,7 @@ Meshes
 
 [TESTO]
 
-.. _example22:
+.. _multiple-point-clouds:
 
 Multiple Point Clouds
 +++++++++++++++++++++
@@ -626,7 +635,7 @@ Multiple Point Clouds
 
 [TESTO]
 
-.. _example23:
+.. _camera-animation:
 
 Camera Animation
 ++++++++++++++++
@@ -643,7 +652,7 @@ Camera Animation
 
 [TESTO]
 
-.. _example24:
+.. _features-ca13:
 
 Features (CA13)
 +++++++++++++++
@@ -660,7 +669,7 @@ Features (CA13)
 
 [TESTO]
 
-.. _example25:
+.. _annotations:
 
 Annotations
 ++++++++++++
@@ -677,7 +686,7 @@ Annotations
 
 [TESTO]
 
-.. _example26:
+.. _hierarchical-annotations:
 
 Hierarchical Annotations
 ++++++++++++++++++++++++
@@ -694,7 +703,7 @@ Hierarchical Annotations
 
 [TESTO]
 
-.. _example27:
+.. _animation-paths:
 
 Animation Paths
 ++++++++++++++++++++++++
@@ -711,7 +720,7 @@ Animation Paths
 
 [TESTO]
 
-.. _example28:
+.. _shapefiles:
 
 Shapefiles
 ++++++++++
@@ -728,7 +737,7 @@ Shapefiles
 
 [TESTO]
 
-.. _example29:
+.. _cesium-ca13:
 
 Cesium CA13
 ++++++++++++
@@ -745,7 +754,7 @@ Cesium CA13
 
 [TESTO]
 
-.. _example30:
+.. _geopackage:
 
 Geopackage
 ++++++++++++
