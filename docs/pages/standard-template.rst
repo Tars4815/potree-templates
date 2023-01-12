@@ -24,7 +24,7 @@ Examples
 * :ref:`example15`
 * :ref:`example16`
 * :ref:`example17`
-* :ref:`example18`
+* :ref:`oriented-images`
 * :ref:`example19`
 * :ref:`example20`
 * :ref:`example21`
@@ -490,7 +490,7 @@ Clipping Volume
 
 [TESTO]
 
-.. _example18:
+.. _oriented-images:
 
 Oriented Images
 ++++++++++++++++
@@ -502,6 +502,27 @@ Oriented Images
 
 .. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/oriented_images.jpg?raw=true
   :align: center
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `oriented_images.html file <https://github.com/potree/potree/blob/develop/examples/oriented_images.html>`__.
+This file template includes the basic settings for a functional Potree Viewer (:ref:`basic-viewer`) equipped with examples of custom sidebar.
+
+..
+    Potree oriented images example
+
+.. code-block:: html
+
+  <script type="module">
+    import * as THREE from "../libs/three.js/build/three.module.js";
+    const cameraParamsPath = "http://5.9.65.151/mschuetz/potree/resources/pointclouds/helimap/epalinges/img_selected/IXM35_190522_nodistortion.xml";
+    const imageParamsPath = "http://5.9.65.151/mschuetz/potree/resources/pointclouds/helimap/epalinges/img_selected/Calib190522_MN95_NF2_cam_estim.txt";
+    
+    Potree.OrientedImageLoader.load(cameraParamsPath, imageParamsPath, viewer).then( images => {
+      viewer.scene.addOrientedImages(images);
+		});
+	
+	</script>
 
 """""""""""""""""""""""""""""""""""""""""""""""
 

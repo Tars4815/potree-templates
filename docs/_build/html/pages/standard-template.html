@@ -58,7 +58,7 @@
 <li><p><a class="reference internal" href="#example15"><span class="std std-ref">EPT Binary</span></a></p></li>
 <li><p><a class="reference internal" href="#example16"><span class="std std-ref">EPT zstandard</span></a></p></li>
 <li><p><a class="reference internal" href="#example17"><span class="std std-ref">Clipping Volume</span></a></p></li>
-<li><p><a class="reference internal" href="#example18"><span class="std std-ref">Oriented Images</span></a></p></li>
+<li><p><a class="reference internal" href="#oriented-images"><span class="std std-ref">Oriented Images</span></a></p></li>
 <li><p><a class="reference internal" href="#example19"><span class="std std-ref">Elevation Profile</span></a></p></li>
 <li><p><a class="reference internal" href="#example20"><span class="std std-ref">Measurements</span></a></p></li>
 <li><p><a class="reference internal" href="#example21"><span class="std std-ref">Meshes</span></a></p></li>
@@ -71,7 +71,7 @@
 <li><p><a class="reference internal" href="#example28"><span class="std std-ref">Shapefiles</span></a></p></li>
 <li><p><a class="reference internal" href="#example29"><span class="std std-ref">Cesium CA13</span></a></p></li>
 <li><p><a class="reference internal" href="#example30"><span class="std std-ref">Geopackage</span></a></p></li>
-<li><p><a class="reference internal" href="#example31"><span class="std std-ref">Cesium Sorvilier</span></a></p></li>
+<li><p><a class="reference internal" href="#cesium-sorvilier"><span class="std std-ref">Cesium Sorvilier</span></a></p></li>
 <li><p><a class="reference internal" href="#custom-sidebar"><span class="std std-ref">Custom Sidebar Section</span></a></p></li>
 <li><p><a class="reference internal" href="#iframe"><span class="std std-ref">Embedded iframe</span></a></p></li>
 <li><p><a class="reference internal" href="#gradient-colors"><span class="std std-ref">Gradient colors</span></a></p></li>
@@ -319,9 +319,24 @@ This file template includes the basic settings for a functional Potree Viewer th
 <p>[TESTO]</p>
 </section>
 <section id="oriented-images">
-<span id="example18"></span><h3>Oriented Images<a class="headerlink" href="#oriented-images" title="Permalink to this heading">¶</a></h3>
+<span id="id2"></span><h3>Oriented Images<a class="headerlink" href="#oriented-images" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="http://potree.org/potree/examples/oriented_images.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/oriented_images.jpg?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/oriented_images.jpg?raw=true" />
+<hr class="docutils" />
+<p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/oriented_images.html">oriented_images.html file</a>.
+This file template includes the basic settings for a functional Potree Viewer (<a class="reference internal" href="#basic-viewer"><span class="std std-ref">Basic Viewer</span></a>) equipped with examples of custom sidebar.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">THREE</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../libs/three.js/build/three.module.js&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cameraParamsPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://5.9.65.151/mschuetz/potree/resources/pointclouds/helimap/epalinges/img_selected/IXM35_190522_nodistortion.xml&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">imageParamsPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://5.9.65.151/mschuetz/potree/resources/pointclouds/helimap/epalinges/img_selected/Calib190522_MN95_NF2_cam_estim.txt&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">OrientedImageLoader</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">cameraParamsPath</span><span class="p">,</span><span class="w"> </span><span class="nx">imageParamsPath</span><span class="p">,</span><span class="w"> </span><span class="nx">viewer</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="w"> </span><span class="nx">images</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">addOrientedImages</span><span class="p">(</span><span class="nx">images</span><span class="p">);</span><span class="w"></span>
+<span class="w">              </span><span class="p">});</span><span class="w"></span>
+
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p>[TESTO]</p>
 </section>
@@ -410,7 +425,7 @@ This file template includes the basic settings for a functional Potree Viewer th
 <p>[TESTO]</p>
 </section>
 <section id="cesium-sorvilier">
-<span id="example31"></span><h3>Cesium Sorvilier<a class="headerlink" href="#cesium-sorvilier" title="Permalink to this heading">¶</a></h3>
+<span id="id3"></span><h3>Cesium Sorvilier<a class="headerlink" href="#cesium-sorvilier" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="http://potree.org/potree/examples/cesium_sorvilier.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/cesium_sorvilier.png?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/cesium_sorvilier.png?raw=true" />
 <hr class="docutils" />
@@ -480,7 +495,7 @@ In order to change the viewer page to be embedded, subtitute <em>viewer.html</em
 <p>In the div element additional settings are defined, including the style and the position of the element within the page following CSS standards.</p>
 </section>
 <section id="gradient-colors">
-<span id="id2"></span><h3>Gradient colors<a class="headerlink" href="#gradient-colors" title="Permalink to this heading">¶</a></h3>
+<span id="id4"></span><h3>Gradient colors<a class="headerlink" href="#gradient-colors" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="http://potree.org/potree/examples/gradient_colors.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/gradient_colors.png?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/gradient_colors.png?raw=true" />
 <hr class="docutils" />
