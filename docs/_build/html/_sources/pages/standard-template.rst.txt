@@ -508,6 +508,14 @@ Oriented Images
 After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `oriented_images.html file <https://github.com/potree/potree/blob/develop/examples/oriented_images.html>`__.
 This file template includes the basic settings for a functional Potree Viewer (:ref:`basic-viewer`) equipped with examples of custom sidebar.
 
+In addition to the standard code for the simple basic viewer, the html page include an additional script element with the required functions to load the oriented images.
+Indeed, first the script declare 2 constants:
+
+* **cameraParamsPath** that is defined with a file path to the .xml document that contains the calibration parameters (focal length, image width, length etc.) of the camera used to capture the oriented images.
+* **imageParamsPath** which refers to the file path of the .txt document in which the oriented images parameters are listed together with the corresponding image name files.
+
+The given constants are then passed together with the viewer element into the *Potree.OrientedImageLoader.load()* that then adds the images to the Potree viewer and scene.
+
 ..
     Potree oriented images example
 
@@ -526,7 +534,29 @@ This file template includes the basic settings for a functional Potree Viewer (:
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-[TESTO]
+In order to run smoothly the entire process, it is important that the parameters file are formatted correctly.
+
+..
+    add a note box
+
+.. note:: In particular, the image parameters file should carefully respect the structure of the example below, with orientation angles indicated as Omega, Phi and Kappa.
+
+..
+    Example of oriented image parameters .txt file
+
+.. code-block:: html
+
+  # CoordinateSystem: PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.01745329251994328,AUTHORITY["EPSG","9102"]],AUTHORITY["EPSG","4150"]],PROJECTION["Oblique_Mercator",AUTHORITY["EPSG","9815"]],PARAMETER["latitude_of_center",46.95240555555561],PARAMETER["longitude_of_center",7.439583333333329],PARAMETER["azimuth",90],PARAMETER["recitified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AUTHORITY["EPSG","2056"]]
+  #Label	X/Easting	Y/Northing	Z/Altitude	Omega	Phi	Kappa	X_est	Y_est	Z_est	Omega_est	Phi_est	Kappa_est
+  47521.jpg	2541968.212303	1156043.192768	1004.707676	3.557724	3.273124	-40.010726
+  47524.jpg	2542076.519349	1155923.975329	1009.489869	0.136003	4.313254	-43.116678
+  47549.jpg	2542027.910785	1155984.936730	1013.691026	-2.697229	0.813820	135.395195
+  47561.jpg	2542105.017595	1156065.259213	1014.761372	-0.735153	-2.127324	-132.847907
+  47588.jpg	2541950.983809	1155914.133744	1100.203228	-0.849119	6.052296	43.560809
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+[ADD DETAILS ON HOW TO EASILY CREATE THESE FILES WITH COMMERCIAL SOFTWARE (METASHAPE)]
 
 .. _example19:
 

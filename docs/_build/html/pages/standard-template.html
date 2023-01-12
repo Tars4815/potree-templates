@@ -325,6 +325,13 @@ This file template includes the basic settings for a functional Potree Viewer th
 <hr class="docutils" />
 <p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/oriented_images.html">oriented_images.html file</a>.
 This file template includes the basic settings for a functional Potree Viewer (<a class="reference internal" href="#basic-viewer"><span class="std std-ref">Basic Viewer</span></a>) equipped with examples of custom sidebar.</p>
+<p>In addition to the standard code for the simple basic viewer, the html page include an additional script element with the required functions to load the oriented images.
+Indeed, first the script declare 2 constants:</p>
+<ul class="simple">
+<li><p><strong>cameraParamsPath</strong> that is defined with a file path to the .xml document that contains the calibration parameters (focal length, image width, length etc.) of the camera used to capture the oriented images.</p></li>
+<li><p><strong>imageParamsPath</strong> which refers to the file path of the .txt document in which the oriented images parameters are listed together with the corresponding image name files.</p></li>
+</ul>
+<p>The given constants are then passed together with the viewer element into the <em>Potree.OrientedImageLoader.load()</em> that then adds the images to the Potree viewer and scene.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span><span class="w"></span>
 <span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">THREE</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../libs/three.js/build/three.module.js&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cameraParamsPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://5.9.65.151/mschuetz/potree/resources/pointclouds/helimap/epalinges/img_selected/IXM35_190522_nodistortion.xml&quot;</span><span class="p">;</span><span class="w"></span>
@@ -338,7 +345,22 @@ This file template includes the basic settings for a functional Potree Viewer (<
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>[TESTO]</p>
+<p>In order to run smoothly the entire process, it is important that the parameters file are formatted correctly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In particular, the image parameters file should carefully respect the structure of the example below, with orientation angles indicated as Omega, Phi and Kappa.</p>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span># CoordinateSystem: PROJCS[&quot;CH1903+ / LV95&quot;,GEOGCS[&quot;CH1903+&quot;,DATUM[&quot;CH1903+&quot;,SPHEROID[&quot;Bessel 1841&quot;,6377397.155,299.1528128,AUTHORITY[&quot;EPSG&quot;,&quot;7004&quot;]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY[&quot;EPSG&quot;,&quot;6150&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.01745329251994328,AUTHORITY[&quot;EPSG&quot;,&quot;9102&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4150&quot;]],PROJECTION[&quot;Oblique_Mercator&quot;,AUTHORITY[&quot;EPSG&quot;,&quot;9815&quot;]],PARAMETER[&quot;latitude_of_center&quot;,46.95240555555561],PARAMETER[&quot;longitude_of_center&quot;,7.439583333333329],PARAMETER[&quot;azimuth&quot;,90],PARAMETER[&quot;recitified_grid_angle&quot;,90],PARAMETER[&quot;scale_factor&quot;,1],PARAMETER[&quot;false_easting&quot;,2600000],PARAMETER[&quot;false_northing&quot;,1200000],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;2056&quot;]]
+#Label        X/Easting       Y/Northing      Z/Altitude      Omega   Phi     Kappa   X_est   Y_est   Z_est   Omega_est       Phi_est Kappa_est
+47521.jpg     2541968.212303  1156043.192768  1004.707676     3.557724        3.273124        -40.010726
+47524.jpg     2542076.519349  1155923.975329  1009.489869     0.136003        4.313254        -43.116678
+47549.jpg     2542027.910785  1155984.936730  1013.691026     -2.697229       0.813820        135.395195
+47561.jpg     2542105.017595  1156065.259213  1014.761372     -0.735153       -2.127324       -132.847907
+47588.jpg     2541950.983809  1155914.133744  1100.203228     -0.849119       6.052296        43.560809
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>[ADD DETAILS ON HOW TO EASILY CREATE THESE FILES WITH COMMERCIAL SOFTWARE (METASHAPE)]</p>
 </section>
 <section id="elevation-profile">
 <span id="example19"></span><h3>Elevation Profile<a class="headerlink" href="#elevation-profile" title="Permalink to this heading">¶</a></h3>
