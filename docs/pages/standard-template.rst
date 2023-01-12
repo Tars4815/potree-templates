@@ -37,7 +37,7 @@ Examples
 * :ref:`example28`
 * :ref:`example29`
 * :ref:`example30`
-* :ref:`example31`
+* :ref:`cesium-sorvilier`
 * :ref:`custom-sidebar`
 * :ref:`iframe`
 * :ref:`gradient-colors`
@@ -711,7 +711,7 @@ Geopackage
 
 [TESTO]
 
-.. _example31:
+.. _cesium-sorvilier:
 
 Cesium Sorvilier
 ++++++++++++++++
