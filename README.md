@@ -14,7 +14,6 @@ https://potree-templates.readthedocs.io/en/latest/index.html
 
 - CA13
 - Retz (Cesium+Potree)
-- Classifications
 - Various Features
 - Toolbar
 - Load Project
@@ -29,7 +28,6 @@ https://potree-templates.readthedocs.io/en/latest/index.html
 - Measurements
 - Meshes
 - Multiple Point Clouds
-- Camera Animation
 - Features (CA13)
 - Annotations
 - Hierarchical Annotations

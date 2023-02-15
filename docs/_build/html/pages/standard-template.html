@@ -499,7 +499,45 @@ Indeed, first the script declare 2 constants:</p>
 <p><a class="reference external" href="http://potree.org/potree/examples/camera_animation.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/camera_animation.jpg?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/camera_animation.jpg?raw=true" />
 <hr class="docutils" />
-<p>[TESTO]</p>
+<p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/camera_animation.html">camera_animation.html file</a>.
+This file template includes the basic settings for a functional Potree Viewer (<a class="reference internal" href="#basic-viewer"><span class="std std-ref">Basic Viewer</span></a>) equipped with examples of an implemented camera animation.</p>
+<p>In order to include by default a camera animation to the Potree viewer, it is simply needed to include a script module in the html body script as follows:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span><span class="w"></span>
+
+<span class="w">      </span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">THREE</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../libs/three.js/build/three.module.js&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">              </span><span class="kd">const</span><span class="w"> </span><span class="nx">animation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">CameraAnimation</span><span class="p">(</span><span class="nx">viewer</span><span class="p">);</span><span class="w"></span>
+
+
+<span class="w">              </span><span class="kd">const</span><span class="w"> </span><span class="nx">positions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                      </span><span class="p">[</span><span class="mf">590291.6145250637</span><span class="p">,</span><span class="w"> </span><span class="mf">231565.3152460147</span><span class="p">,</span><span class="w"> </span><span class="mf">888.181158774433</span><span class="p">],</span><span class="w"></span>
+<span class="w">                      </span><span class="p">[</span><span class="mf">590094.2454560432</span><span class="p">,</span><span class="w"> </span><span class="mf">231235.32163877538</span><span class="p">,</span><span class="w"> </span><span class="mf">870.7535717968211</span><span class="p">],</span><span class="w"></span>
+<span class="w">                      </span><span class="p">[</span><span class="mf">589675.8154371583</span><span class="p">,</span><span class="w"> </span><span class="mf">231058.22066649256</span><span class="p">,</span><span class="w"> </span><span class="mf">905.3068746322883</span><span class="p">],</span><span class="w"></span>
+<span class="w">                      </span><span class="p">[</span><span class="mf">589328.6700949036</span><span class="p">,</span><span class="w"> </span><span class="mf">231385.37585641106</span><span class="p">,</span><span class="w"> </span><span class="mf">813.9565903445384</span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">];</span><span class="w"></span>
+
+<span class="w">              </span><span class="kd">const</span><span class="w"> </span><span class="nx">targets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                      </span><span class="p">[</span><span class="mf">589859.3465488373</span><span class="p">,</span><span class="w"> </span><span class="mf">231456.18943956672</span><span class="p">,</span><span class="w"> </span><span class="mf">758.2733646218901</span><span class="p">],</span><span class="w"></span>
+<span class="w">                      </span><span class="p">[</span><span class="mf">589846.4463098792</span><span class="p">,</span><span class="w"> </span><span class="mf">231431.89813285187</span><span class="p">,</span><span class="w"> </span><span class="mf">755.9090168440739</span><span class="p">],</span><span class="w"></span>
+<span class="w">                      </span><span class="p">[</span><span class="mf">589824.0843049305</span><span class="p">,</span><span class="w"> </span><span class="mf">231444.72309070674</span><span class="p">,</span><span class="w"> </span><span class="mf">760.3459659610106</span><span class="p">],</span><span class="w"></span>
+<span class="w">                      </span><span class="p">[</span><span class="mf">589799.7263767472</span><span class="p">,</span><span class="w"> </span><span class="mf">231473.79043369304</span><span class="p">,</span><span class="w"> </span><span class="mf">758.8332698380435</span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">];</span><span class="w"></span>
+
+<span class="w">              </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">positions</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">                      </span><span class="kd">const</span><span class="w"> </span><span class="nx">cp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">animation</span><span class="p">.</span><span class="nx">createControlPoint</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">                      </span><span class="nx">cp</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(...</span><span class="nx">positions</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">                      </span><span class="nx">cp</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">set</span><span class="p">(...</span><span class="nx">targets</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">              </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">addCameraAnimation</span><span class="p">(</span><span class="nx">animation</span><span class="p">);</span><span class="w"></span>
+
+
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This code, after defining coordinates for camera positions and targets - that can be achieved as suggested in the basic viewer note -, create the control point of the animation upon which the animation trajectory is built.
+Then, the animation is added to the scene with the <em>.addCameraAnimation()</em> method.</p>
 </section>
 <section id="features-ca13">
 <span id="id22"></span><h3>Features (CA13)<a class="headerlink" href="#features-ca13" title="Permalink to this heading">¶</a></h3>
