@@ -175,7 +175,7 @@ Then, a series of parameters is set inside the loading function:
 All these parameters corresponds to the properties accessible after clicking on the point cloud from the objects list in the scene sidebar section.
 
 The *.addPointCloud()* is then applied to the scene to which the pointcloud should be added.
-Additionally, [Define ]
+Additionally, the view on the model is defined through the *.setView()* method that takes as input the coordinates of camera positions and targets.
 
 ..
     Potree code for adding a point cloud to a scene
@@ -197,14 +197,20 @@ Additionally, [Define ]
 			scene.addPointCloud(pointcloud);
 			
 			viewer.fitToScreen();
-			// scene.view.setView(
-			// 	[589974.341, 231698.397, 986.146],
-			// 	[589851.587, 231428.213, 715.634],
-			// );
+			scene.view.setView(
+				[589974.341, 231698.397, 986.146],
+			 	[589851.587, 231428.213, 715.634],
+			);
 		});
 	</script>
 
 """""""""""""""""""""""""""""""""""""""""""""""
+
+..
+    add a note box
+
+.. note:: A useful trick for setting easily the view on the model is to click on Other/Camera in the Scene section of the Potree Sidebar. Once selected, this option will activate a new properties box with camera position and target coordinates dynamically changing as the user navigate through the model in the viewer. Those coordinates can easily be copied and pasted in the code.
+
 
 .. _ca13:
 
@@ -266,6 +272,10 @@ Classifications
   :align: center
 
 """""""""""""""""""""""""""""""""""""""""""""""
+
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `classification.html file <https://github.com/potree/potree/blob/develop/examples/classifications.html>`__.
+This file template includes the basic settings for a functional Potree Viewer that includes a point cloud with more than 18 billion points.
+
 
 [TESTO]
 

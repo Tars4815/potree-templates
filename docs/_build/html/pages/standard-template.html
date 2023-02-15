@@ -174,7 +174,7 @@ In this section, like every HTML page, it is possible to define the page title t
 </ul>
 <p>All these parameters corresponds to the properties accessible after clicking on the point cloud from the objects list in the scene sidebar section.</p>
 <p>The <em>.addPointCloud()</em> is then applied to the scene to which the pointcloud should be added.
-Additionally, [Define ]</p>
+Additionally, the view on the model is defined through the <em>.setView()</em> method that takes as input the coordinates of camera positions and targets.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// Load and add point cloud to scene</span><span class="w"></span>
 <span class="w">        </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">loadPointCloud</span><span class="p">(</span><span class="s2">&quot;../pointclouds/vol_total/cloud.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sigeom.sa&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -190,15 +190,19 @@ Additionally, [Define ]</p>
 <span class="w">                </span><span class="nx">scene</span><span class="p">.</span><span class="nx">addPointCloud</span><span class="p">(</span><span class="nx">pointcloud</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">                </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">fitToScreen</span><span class="p">();</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// scene.view.setView(</span><span class="w"></span>
-<span class="w">                </span><span class="c1">//      [589974.341, 231698.397, 986.146],</span><span class="w"></span>
-<span class="w">                </span><span class="c1">//      [589851.587, 231428.213, 715.634],</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// );</span><span class="w"></span>
+<span class="w">                </span><span class="nx">scene</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">setView</span><span class="p">(</span><span class="w"></span>
+<span class="w">                        </span><span class="p">[</span><span class="mf">589974.341</span><span class="p">,</span><span class="w"> </span><span class="mf">231698.397</span><span class="p">,</span><span class="w"> </span><span class="mf">986.146</span><span class="p">],</span><span class="w"></span>
+<span class="w">                        </span><span class="p">[</span><span class="mf">589851.587</span><span class="p">,</span><span class="w"> </span><span class="mf">231428.213</span><span class="p">,</span><span class="w"> </span><span class="mf">715.634</span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="p">});</span><span class="w"></span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A useful trick for setting easily the view on the model is to click on Other/Camera in the Scene section of the Potree Sidebar. Once selected, this option will activate a new properties box with camera position and target coordinates dynamically changing as the user navigate through the model in the viewer. Those coordinates can easily be copied and pasted in the code.</p>
+</div>
 </section>
 <section id="ca13-18-billion-points">
 <span id="ca13"></span><h3>CA13 (18 billion points)<a class="headerlink" href="#ca13-18-billion-points" title="Permalink to this heading">¶</a></h3>
@@ -225,6 +229,8 @@ This file template includes the basic settings for a functional Potree Viewer th
 <p><a class="reference external" href="potree.org/potree/examples/classifications.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/classifications.jpg?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/classifications.jpg?raw=true" />
 <hr class="docutils" />
+<p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/classifications.html">classification.html file</a>.
+This file template includes the basic settings for a functional Potree Viewer that includes a point cloud with more than 18 billion points.</p>
 <p>[TESTO]</p>
 </section>
 <section id="various-features">
