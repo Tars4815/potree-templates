@@ -297,14 +297,92 @@ To do so the active attribute for the point cloud material (*material.activeAttr
 			viewer.scene.view.position.set(694274.518, 3916261.987, 348.732);
 			viewer.scene.view.lookAt(694683.097, 3916386.916, 30.879);
 		});
-  
 
 ..
     add a note box
 
-.. note:: To be sure that the point cloud properties are correctly defined, before converting it, check if one of its scalar field is correctly named as "classification" (in software liked CloudCompare..).
+.. note:: To be sure that the point cloud properties are correctly defined, before converting it, check if one of its scalar field is correctly named as "classification" (in software like CloudCompare..).
 
-[TESTO]
+The working example additionally shows how to create button with functions for changing the classification scheme and color.
+This is achieved by first defining the html code for the buttons inside the potree container div element.
+Indeed, 3 buttons are defined through as many input tags:
+
+1. **Default Scheme** (with onclick function *.setDefaultScheme()*) associated to the original classification scheme already defined in the potree.js source;
+2. **Tree Scheme** (with onclick function *.setTreeScheme()*) linked to a new custom scheme highlighting only points belonging to one specific class;
+3. **Random Scheme** (with onclick function *.setRandomScheme()*) with a function that randomly change colors of all classes.
+
+.. code-block:: html
+
+  <div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
+		<div id="potree_render_area" style="background-image: url('../build/potree/resources/images/background.jpg');">
+
+			<span style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 10000">
+				<input type="button" value="Default Scheme" onclick="setDefaultScheme()"/>
+				<input type="button" value="Tree Scheme" onclick="setTreeScheme()"/>
+				<input type="button" value="Random Scheme" onclick="setRandomScheme()"/>
+			</span>
+
+		</div>
+		<div id="potree_sidebar_container"> </div>
+	</div>
+
+The set of operations executed by each function is later defined inside a script block.
+
+.. code-block:: javascript
+
+  import * as THREE from "../libs/three.js/build/three.module.js";
+
+		window.setDefaultScheme = function(){
+			viewer.setClassifications(Potree.ClassificationScheme.DEFAULT);
+		}
+
+		window.setTreeScheme = function(){
+			viewer.setClassifications({
+				5:       { visible: true, name: 'trees'        , color: [0.0, 1.0, 0.0, 1.0] },
+				DEFAULT: { visible: false, name: 'other' , color: [0.0, 0.0, 0.0, 1.0] },
+			});
+		}
+
+		window.setRandomScheme = function(){
+			const scheme = {};
+
+			for(let i = 0; i < 32; i++){
+				scheme[i] = { visible: true, name: `random:_${i}`, color: [Math.random(), Math.random(), Math.random(), 1.0] };
+			}
+
+			viewer.setClassifications(scheme);
+		}
+
+First, *.setDefaultScheme()* is defined by giving as input to the *.setClassifications()* method the standard classification scheme defined by default in the potree.js source code as follows:
+
+.. code-block:: javascript
+
+  const ClassificationScheme = {
+
+		DEFAULT: {
+			0:       { visible: true, name: 'never classified'  , color: [0.5,  0.5,  0.5,  1.0] },
+			1:       { visible: true, name: 'unclassified'      , color: [0.5,  0.5,  0.5,  1.0] },
+			2:       { visible: true, name: 'ground'            , color: [0.63, 0.32, 0.18, 1.0] },
+			3:       { visible: true, name: 'low vegetation'    , color: [0.0,  1.0,  0.0,  1.0] },
+			4:       { visible: true, name: 'medium vegetation' , color: [0.0,  0.8,  0.0,  1.0] },
+			5:       { visible: true, name: 'high vegetation'   , color: [0.0,  0.6,  0.0,  1.0] },
+			6:       { visible: true, name: 'building'          , color: [1.0,  0.66, 0.0,  1.0] },
+			7:       { visible: true, name: 'low point(noise)'  , color: [1.0,  0.0,  1.0,  1.0] },
+			8:       { visible: true, name: 'key-point'         , color: [1.0,  0.0,  0.0,  1.0] },
+			9:       { visible: true, name: 'water'             , color: [0.0,  0.0,  1.0,  1.0] },
+			12:      { visible: true, name: 'overlap'           , color: [1.0,  1.0,  0.0,  1.0] },
+			DEFAULT: { visible: true, name: 'default'           , color: [0.3,  0.6,  0.6,  0.5] },
+		}
+	};
+
+In this way, for instance, each point containing the 0 value in the scalar field previously selected in the html code, will be considered as "never classified" and will be visible in the scene in the given RGBA color.
+If not explicitly stated in the scheme with a number, a point value will be assigned to the default class.
+
+Such scheme is altered with the definition of the *.setTreeScheme()* in which all the points associated to the classification value 5 (originally "high vegetation") are assigned to a new class called "tree".
+All the other values are instead left in the other class, whose visibility is set as false (hidden).
+
+Eventually, the *.setRandomScheme()* function, after defining a new empty scheme object, loop through 33 consecutive values and assign them a random triplet of RGBA colors.
+
 
 .. _various-features:
 
