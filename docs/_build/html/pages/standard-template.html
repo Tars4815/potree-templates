@@ -229,8 +229,29 @@ This file template includes the basic settings for a functional Potree Viewer th
 <p><a class="reference external" href="potree.org/potree/examples/classifications.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/classifications.jpg?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/classifications.jpg?raw=true" />
 <hr class="docutils" />
-<p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/classifications.html">classification.html file</a>.
-This file template includes the basic settings for a functional Potree Viewer that includes a point cloud with more than 18 billion points.</p>
+<p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/classifications.html">classifications.html file</a>.
+This file template includes the basic settings for a basic Potree Viewer (<a class="reference internal" href="#basic-viewer"><span class="std std-ref">Basic Viewer</span></a>) that includes a classified point cloud.</p>
+<p>The main changes to the basic template consists in the definition of the type of visualisation for the pointcloud.
+In particular, this refers to the scalar field information to be considered when choosing the appearance of the point cloud.
+In this case, it is needed to show the classification of the point cloud, illustrating different classes of the territory like <em>ground</em>, <em>building</em>, <em>water</em>, <em>low vegetation</em> etc.
+To do so the active attribute for the point cloud material (<em>material.activeAttributeName</em>) should be set to the scalar field containing the required information to be shown (in this case, “classification”.)</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Potree</span><span class="p">.</span><span class="nx">loadPointCloud</span><span class="p">(</span><span class="s2">&quot;http://5.9.65.151/mschuetz/potree/resources/pointclouds/opentopography/CA13_1.4/cloud.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CA13&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="w"></span>
+<span class="w">                     </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">addPointCloud</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">pointcloud</span><span class="p">);</span><span class="w"></span>
+<span class="w">                     </span><span class="nx">e</span><span class="p">.</span><span class="nx">pointcloud</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">                     </span><span class="kd">let</span><span class="w"> </span><span class="nx">material</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">pointcloud</span><span class="p">.</span><span class="nx">material</span><span class="p">;</span><span class="w"></span>
+<span class="w">                     </span><span class="nx">material</span><span class="p">.</span><span class="nx">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
+<span class="w">                     </span><span class="nx">material</span><span class="p">.</span><span class="nx">pointSizeType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">PointSizeType</span><span class="p">.</span><span class="nx">FIXED</span><span class="p">;</span><span class="w"></span>
+<span class="w">                     </span><span class="nx">material</span><span class="p">.</span><span class="nx">activeAttributeName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;classification&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">                     </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">694274.518</span><span class="p">,</span><span class="w"> </span><span class="mf">3916261.987</span><span class="p">,</span><span class="w"> </span><span class="mf">348.732</span><span class="p">);</span><span class="w"></span>
+<span class="w">                     </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">lookAt</span><span class="p">(</span><span class="mf">694683.097</span><span class="p">,</span><span class="w"> </span><span class="mf">3916386.916</span><span class="p">,</span><span class="w"> </span><span class="mf">30.879</span><span class="p">);</span><span class="w"></span>
+<span class="w">             </span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To be sure that the point cloud properties are correctly defined, before converting it, check if one of its scalar field is correctly named as “classification” (in software liked CloudCompare..).</p>
+</div>
 <p>[TESTO]</p>
 </section>
 <section id="various-features">

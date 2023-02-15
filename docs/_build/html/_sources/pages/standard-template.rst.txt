@@ -273,9 +273,36 @@ Classifications
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `classification.html file <https://github.com/potree/potree/blob/develop/examples/classifications.html>`__.
-This file template includes the basic settings for a functional Potree Viewer that includes a point cloud with more than 18 billion points.
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `classifications.html file <https://github.com/potree/potree/blob/develop/examples/classifications.html>`__.
+This file template includes the basic settings for a basic Potree Viewer (:ref:`basic-viewer`) that includes a classified point cloud.
 
+The main changes to the basic template consists in the definition of the type of visualisation for the pointcloud.
+In particular, this refers to the scalar field information to be considered when choosing the appearance of the point cloud.
+In this case, it is needed to show the classification of the point cloud, illustrating different classes of the territory like *ground*, *building*, *water*, *low vegetation* etc.
+To do so the active attribute for the point cloud material (*material.activeAttributeName*) should be set to the scalar field containing the required information to be shown (in this case, "classification".)
+
+..
+    code block example
+
+.. code-block:: javascript
+  
+   Potree.loadPointCloud("http://5.9.65.151/mschuetz/potree/resources/pointclouds/opentopography/CA13_1.4/cloud.js", "CA13", function(e){
+			viewer.scene.addPointCloud(e.pointcloud);
+			e.pointcloud.position.z = 0;
+			let material = e.pointcloud.material;
+			material.size = 3;
+			material.pointSizeType = Potree.PointSizeType.FIXED;
+			material.activeAttributeName = "classification";
+			
+			viewer.scene.view.position.set(694274.518, 3916261.987, 348.732);
+			viewer.scene.view.lookAt(694683.097, 3916386.916, 30.879);
+		});
+  
+
+..
+    add a note box
+
+.. note:: To be sure that the point cloud properties are correctly defined, before converting it, check if one of its scalar field is correctly named as "classification" (in software liked CloudCompare..).
 
 [TESTO]
 
