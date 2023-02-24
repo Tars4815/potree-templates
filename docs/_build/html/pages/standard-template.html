@@ -551,7 +551,59 @@ Then, the animation is added to the scene with the <em>.addCameraAnimation()</em
 <p><a class="reference external" href="http://potree.org/potree/examples/annotations.html">Working example</a></p>
 <img alt="https://github.com/potree/potree/blob/develop/examples/thumbnails/annotations.png?raw=true" class="align-center" src="https://github.com/potree/potree/blob/develop/examples/thumbnails/annotations.png?raw=true" />
 <hr class="docutils" />
-<p>[TESTO]</p>
+<p>After cloning the Potree develop repository as suggested in section [reference], navigate to the <em>examples</em> folder and search for the <a class="reference external" href="https://github.com/potree/potree/blob/develop/examples/annotations.html">annotations.html file</a>.
+This file template includes the basic settings for a functional Potree Viewer (<a class="reference internal" href="#basic-viewer"><span class="std std-ref">Basic Viewer</span></a>) equipped with examples of interactive annotations.</p>
+<p>In this example, first 2 distinct scenes are defined (<strong>Potree.Scene()</strong>).
+The first one (<em>sceneSG</em>) through the <strong>.setScene()</strong> method is set as the main one to be adopted when the viewer is loaded on the page.
+The other one will be later used as the target for an action embedded in an annotation.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">sceneSG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sceneLion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span><span class="w"></span>
+
+<span class="nx">viewer</span><span class="p">.</span><span class="nx">setScene</span><span class="p">(</span><span class="nx">sceneSG</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Then, the code includes the settings from the basic viewer for loading a pointcloud to the main scene previously named <em>sceneSG</em>.
+After that, a series of annotations is finally initialised. In particular the first one is defined as follow:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">elTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="sb">`</span>
+<span class="sb">                &lt;span&gt;</span>
+<span class="sb">                        About Annotations</span>
+<span class="sb">                        &lt;img src=&quot;</span><span class="si">${</span><span class="nx">Potree</span><span class="p">.</span><span class="nx">resourcePath</span><span class="si">}</span><span class="sb">/icons/goto.svg&quot;</span>
+<span class="sb">                        name=&quot;action_set_scene&quot;</span>
+<span class="sb">                        class=&quot;annotation-action-icon&quot;</span>
+<span class="sb">                        style=&quot;filter: invert(1);&quot; /&gt;</span>
+<span class="sb">                &lt;/span&gt;</span>
+<span class="sb">        `</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="nx">elTitle</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;img[name=action_set_scene]&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span><span class="w"></span>
+<span class="w">                </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">setScene</span><span class="p">(</span><span class="nx">sceneLion</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="w">        </span><span class="nx">elTitle</span><span class="p">.</span><span class="nx">toString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;About Annotations&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">aAbout1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Potree</span><span class="p">.</span><span class="nx">Annotation</span><span class="p">({</span><span class="w"></span>
+<span class="w">                </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">590043.63</span><span class="p">,</span><span class="w"> </span><span class="mf">231490.79</span><span class="p">,</span><span class="w"> </span><span class="mf">740.78</span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">elTitle</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nx">cameraPosition</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">590105.53</span><span class="p">,</span><span class="w"> </span><span class="mf">231541.63</span><span class="p">,</span><span class="w"> </span><span class="mf">782.05</span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="nx">cameraTarget</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">590043.63</span><span class="p">,</span><span class="w"> </span><span class="mf">231488.79</span><span class="p">,</span><span class="w"> </span><span class="mf">740.78</span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="sb">`&lt;ul&gt;&lt;li&gt;Click on the annotation label to move a predefined view.&lt;/li&gt;&lt;li&gt;Click on the icon to execute the specified action.&lt;/li&gt;In this case, the action will bring you to another scene and point cloud.&lt;/ul&gt;`</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+
+<span class="w">        </span><span class="nx">sceneSG</span><span class="p">.</span><span class="nx">annotations</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">aAbout1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>In this example, first the title (<em>elTitle</em>) to be shown in the annotation label is defined.
+In this variable HTML is supported to set style and semantics of the title, enabling also the inclusion of images (with the img tag) linked to action.
+Indeed, by defining a name for the image element, later is possible to implement an action when the label is clicked by the user.
+This happens by defining a series of operations to be executed when the image named <em>action_set_scene</em> is clicked: all the desired operations should then be included with the final brackets of <strong>elTitle.find(“img[name=action_set_scene]”).click()</strong>.
+In this case, the action triggers the initiation of another scene (<strong>viewer.setScene(sceneLion)</strong>), calling the previously defined <em>sceneLion</em>.</p>
+<p>Finally, a simple string name for the annotation is defined with <strong>.toString</strong> in order to have it implemented in the Scene tree in the Potree Sidebar.</p>
+<p>Eventually, the <strong>Potree.Annotation</strong> object is finalised by declaring its <em>position</em>, <em>title</em> (linking to the previously declared variable), <em>cameraPosition</em>, <em>cameraTarget</em> and <em>description</em>.
+The desired camera position and camera target can be defined using the camera object in the scene list of the Potree Sidebar and are needed to define the view on the annotation once the label is clicked by the user.</p>
+<p>Then, it’s time to add the annotation to the main scene with <strong>sceneSG.annotations.add(aAbout1)</strong>.</p>
+<p>[TO BE COMPLETED]</p>
 </section>
 <section id="hierarchical-annotations">
 <span id="id24"></span><h3>Hierarchical Annotations<a class="headerlink" href="#hierarchical-annotations" title="Permalink to this heading">¶</a></h3>

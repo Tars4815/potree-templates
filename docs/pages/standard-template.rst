@@ -833,14 +833,77 @@ Annotations
 `Working example <http://potree.org/potree/examples/annotations.html>`__
 
 ..
-    add centerd image
+    add centered image
 
 .. image:: https://github.com/potree/potree/blob/develop/examples/thumbnails/annotations.png?raw=true
   :align: center
 
 """""""""""""""""""""""""""""""""""""""""""""""
 
-[TESTO]
+After cloning the Potree develop repository as suggested in section [reference], navigate to the *examples* folder and search for the `annotations.html file <https://github.com/potree/potree/blob/develop/examples/annotations.html>`__.
+This file template includes the basic settings for a functional Potree Viewer (:ref:`basic-viewer`) equipped with examples of interactive annotations.
+
+In this example, first 2 distinct scenes are defined (**Potree.Scene()**).
+The first one (*sceneSG*) through the **.setScene()** method is set as the main one to be adopted when the viewer is loaded on the page.
+The other one will be later used as the target for an action embedded in an annotation.
+
+.. code-block:: js
+
+	let sceneSG = new Potree.Scene();
+	let sceneLion = new Potree.Scene();
+		
+	viewer.setScene(sceneSG);
+
+""""""""""""""""""""""""""""""""""""""""""""""
+
+Then, the code includes the settings from the basic viewer for loading a pointcloud to the main scene previously named *sceneSG*.
+After that, a series of annotations is finally initialised. In particular the first one is defined as follow:
+
+.. code-block:: js
+
+	{
+		let elTitle = $(`
+			<span>
+				About Annotations
+				<img src="${Potree.resourcePath}/icons/goto.svg" 
+				name="action_set_scene"
+				class="annotation-action-icon" 
+				style="filter: invert(1);" />
+			</span>
+		`);
+		
+		elTitle.find("img[name=action_set_scene]").click( (event) => {
+			event.stopPropagation();
+			viewer.setScene(sceneLion);
+		});
+		elTitle.toString = () => "About Annotations";
+		let aAbout1 = new Potree.Annotation({
+			position: [590043.63, 231490.79, 740.78],
+			title: elTitle,
+			cameraPosition: [590105.53, 231541.63, 782.05],
+			cameraTarget: [590043.63, 231488.79, 740.78],
+			description: `<ul><li>Click on the annotation label to move a predefined view.</li><li>Click on the icon to execute the specified action.</li>In this case, the action will bring you to another scene and point cloud.</ul>`
+		});
+
+		sceneSG.annotations.add(aAbout1);
+	}
+
+""""""""""""""""""""""""""""""""""""""""""""""
+
+In this example, first the title (*elTitle*) to be shown in the annotation label is defined.
+In this variable HTML is supported to set style and semantics of the title, enabling also the inclusion of images (with the img tag) linked to action.
+Indeed, by defining a name for the image element, later is possible to implement an action when the label is clicked by the user.
+This happens by defining a series of operations to be executed when the image named *action_set_scene* is clicked: all the desired operations should then be included with the final brackets of **elTitle.find("img[name=action_set_scene]").click()**.
+In this case, the action triggers the initiation of another scene (**viewer.setScene(sceneLion)**), calling the previously defined *sceneLion*.
+
+Finally, a simple string name for the annotation is defined with **.toString** in order to have it implemented in the Scene tree in the Potree Sidebar.
+
+Eventually, the **Potree.Annotation** object is finalised by declaring its *position*, *title* (linking to the previously declared variable), *cameraPosition*, *cameraTarget* and *description*.
+The desired camera position and camera target can be defined using the camera object in the scene list of the Potree Sidebar and are needed to define the view on the annotation once the label is clicked by the user.
+
+Then, it's time to add the annotation to the main scene with **sceneSG.annotations.add(aAbout1)**.
+
+[TO BE COMPLETED]
 
 .. _hierarchical-annotations:
 
